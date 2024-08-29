@@ -51,7 +51,7 @@ def parse_lua(luablock):
                 continue
             spell[k] = v
         elif line.startswith('action'):
-            spell = spell | parse_lua_actions(luablock[n+1:])
+            parse_lua_actions(luablock[n+1:], spell)
     probs = [0.0 for _ in range(9)]
     for pair in zip(spell['spawn_level'].split(','), 
                     spell['spawn_probability'].split(',')):
@@ -60,12 +60,11 @@ def parse_lua(luablock):
     return spell
 
 
-def parse_lua_actions(actionblock):
-    spell = {}
+def parse_lua_actions(actionblock, spell):
     for line in actionblock:
         # XML data parsing
         if line.startswith('add_projectile'):
-            spell = spell | parse_xml(re.findall(r'(?<=")([^"]+)(?=")', line))
+            parse_xml(re.findall(r'(?<=")([^"]+)(?=")', line), spell)
             # Timer trigger duration
             timer = re.search(
                 r'(add_projectile_trigger_timer\([^,]*,)([0-9]+)', line)
@@ -155,11 +154,8 @@ def parse_lua_actions(actionblock):
             else:
                 spell['lifetime_mod'] = f'{float(life):.0f}'
 
-    return spell
 
-
-def parse_xml(filename):
-    spell = {}
+def parse_xml(filename, spell):
     if filename:
         if filename[0].endswith('/'):
             return spell
@@ -224,8 +220,6 @@ def parse_xml(filename):
                     if bounces != '0':
                         spell['bounces'] = proj.get('bounces_left')
                         spell['bounce_magnitude'] = proj.get('bounce_energy')
-
-    return spell
 
 
 def add_derived_stats(book):
@@ -308,6 +302,8 @@ def make_csv(book):
             'bounce_magnitude',
             'speed_min',
             'speed_max',
+            'death_speed',
+            'trigger_time',
             'dangerous',
             'projectile',
             'slice',
@@ -355,7 +351,7 @@ book = build_spellbook()
 # print_book(book)
 add_derived_stats(book)
 make_csv(book)
-find_spells(book, attrs=['dangerous'], name='lightning')
+find_spells(book, name='lightning')
 
 
 # Do spell rarity! Add total spawn chance per tier. Figure out the logic behind
