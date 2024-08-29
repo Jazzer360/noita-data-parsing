@@ -235,52 +235,6 @@ def add_derived_stats(book):
             spell[f't{out}'] = f'{prob:.2f}%' if prob > 0 else None
 
 
-def print_book(book):
-    for spell in book:
-        print('\n')
-        print(f'Id: {spell['id']}')
-        print(f'Name: {spell['name']}')
-        print(f'Description: {spell['description']}')
-        print(f'Type: {spell['type']}')
-        if 'mana' in spell:
-            print(f'Mana: {spell['mana']}')
-        if 'cast_delay' in spell:
-            print(f'Cast delay: {spell['cast_delay']}')
-        if 'projectile' in spell:
-            print(f'Damage (Projectile): {spell['projectile']}')
-        if 'slice' in spell:
-            print(f'Damage (Slice): {spell['slice']}')
-        if 'holy' in spell:
-            print(f'Damage (Holy): {spell['holy']}')
-        if 'fire' in spell:
-            print(f'Damage (Fire): {spell['fire']}')
-        if 'electricity' in spell:
-            print(f'Damage (Electricity): {spell['electricity']}')
-        if 'drill' in spell:
-            print(f'Damage (Drill): {spell['drill']}')
-        if 'melee' in spell:
-            print(f'Damage (Melee): {spell['melee']}')
-        if 'healing' in spell:
-            print(f'Damage (Healing): {spell['healing']}')
-        if 'ice' in spell:
-            print(f'Damage (Ice): {spell['ice']}')
-        if 'explosion' in spell:
-            print(f'Damage (Explosion): {spell['explosion']}')
-        if 'radius' in spell:
-            print(f'Explosion Radius: {spell['radius']}')
-        if 'recharge' in spell:
-            print(f'Recharge time: {spell['recharge']}')
-        if 'spread' in spell:
-            print(f'Spread: {spell['spread']}')
-        if 'crit' in spell:
-            print(f'Crit: {spell['crit']}')
-        if 'recoil' in spell:
-            print(f'Recoil: {spell['recoil']}')
-        if 'charges' in spell:
-            print(f'Uses: {spell['charges']}')
-        print(f'Spawn Chance: {spell['spawn_probability']}')
-
-
 def make_csv(book):
     keys = ['id',
             'name',
