@@ -1,0 +1,422 @@
+id,name,description,type,mana,cast_delay,damage_modifier,projectile_damage,slice_damage,holy_damage,fire_damage,electricity_damage,drill_damage,melee_damage,healing_damage,ice_damage,explosion_damage,explosion_radius,recharge,spread,crit,recoil,max_uses,spawn_probability
+BOMB,Bomb,Summons a bomb that destroys ground very efficiently,Projectile,25,1.67s,,,,,,,,,,,125.0,60,,,,,3,1.0,1.0,1.0,1.0,0.5,0.5,0.1,0.0,0.0
+LIGHT_BULLET,Spark bolt,A weak but enchanting sparkling projectile,Projectile,5,0.05s,,3.0,,,,,,,,,,2,,-1,5%,,,2.0,1.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0
+LIGHT_BULLET_TRIGGER,Spark bolt with trigger,A spark bolt that casts another spell upon collision,Projectile,10,0.05s,,3.0,,,,,,,,,,2,,,5%,,,1.0,0.5,0.5,0.5,0.0,0.0,0.0,0.0,0.0
+LIGHT_BULLET_TRIGGER_2,Spark bolt with double trigger,A spark bolt that casts two new spells upon collision,Projectile,15,0.07s,,3.75,,,,,,,,,2.5,12,,,5%,,,0.0,0.0,1.0,0.5,0.0,1.0,1.0,0.0,0.2
+LIGHT_BULLET_TIMER,Spark bolt with timer,A spark bolt that casts another spell after a timer runs out,Projectile,10,0.05s,,3.0,,,,,,,,,,2,,,5%,,,0.0,0.5,0.5,0.75,0.0,0.0,0.0,0.0,0.0
+BULLET,Magic arrow,A handy magical arrow,Projectile,20,0.07s,,10.0,,,,,,,,,,2,,2,5%,23,,0.0,1.0,1.0,1.0,0.8,0.5,0.0,0.0,0.0
+BULLET_TRIGGER,Magic arrow with trigger,A magical arrow that casts another spell upon collision,Projectile,35,0.07s,,10.0,,,,,,,,,,2,,2,5%,23,,0.0,0.5,0.5,0.5,0.6,0.5,0.0,0.0,0.0
+BULLET_TIMER,Magic arrow with timer,A magical arrow that casts another spell after a timer runs out,Projectile,35,0.07s,,10.0,,,,,,,,,,2,,2,5%,23,,0.0,0.0,0.5,0.5,0.5,0.5,0.6,0.0,0.0
+HEAVY_BULLET,Magic bolt,A powerful magical bolt,Projectile,30,0.12s,,12.75,,,,,,,,,,6,,5,5%,50,,0.0,0.5,1.0,1.0,1.0,1.0,1.0,0.0,0.0
+HEAVY_BULLET_TRIGGER,Magic bolt with trigger,A powerful magical bolt that casts another spell upon collision,Projectile,40,0.12s,,12.75,,,,,,,,,,6,,5,5%,50,,0.0,0.0,0.5,0.5,0.5,0.7,0.5,0.0,0.0
+HEAVY_BULLET_TIMER,Magic bolt with timer,A powerful magical bolt that casts another spell after a timer runs out,Projectile,40,0.12s,,12.75,,,,,,,,,,6,,5,5%,50,,0.0,0.0,0.5,0.5,0.5,0.5,0.7,0.0,0.0
+AIR_BULLET,Burst of air,A brittle burst of air capable of greatly pushing objects,Projectile,5,0.05s,,5.75,,,,,,,,,,,,-2,,,,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+SLOW_BULLET,Energy orb,A slow but powerful orb of energy,Projectile,30,0.10s,,11.25,,,,,,,,,4.5,15,,4,,20,,0.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0
+SLOW_BULLET_TRIGGER,Energy orb with a trigger,A slow but powerful orb of energy that casts another spell upon collision,Projectile,50,0.42s,,11.25,,,,,,,,,4.5,15,,10,,20,,0.0,0.5,0.5,0.5,0.5,1.0,0.0,0.0,0.0
+SLOW_BULLET_TIMER,Energy orb with a timer,A slow but powerful orb of energy that casts another spell after a timer runs out,Projectile,50,0.10s,,11.25,,,,,,,,,4.5,15,,4,,20,,0.0,0.5,0.5,0.5,0.5,1.0,1.0,0.0,0.0
+HOOK,Hookbolt,A glowing hook that pulls the caster towards itself upon collision,Projectile,30,0.20s,,7.5,,,,,,,,,,2,,,,10,,0.0,0.1,0.3,0.4,0.2,0.1,0.0,0.0,0.0
+BLACK_HOLE,Black hole,A slow orb of void that eats through all obstacles,Projectile,180,1.33s,,,,,,,,,,,,1,,,,,3,0.8,0.0,0.8,0.0,0.8,0.8,0.0,0.0,0.0
+BLACK_HOLE_DEATH_TRIGGER,Black Hole with Death Trigger,A slow orb of void that eats through all obstacles and casts another spell as it expires,Projectile,200,1.50s,,,,,,,,,,,,1,,,,,3,0.0,0.0,0.5,0.0,0.5,0.5,0.5,0.0,0.0
+WHITE_HOLE,White hole,An orb of positive energy that destroys everything in its path,Projectile,180,1.33s,,,,,,,,,,,,1,,,,,3,0.05,0.0,0.05,0.0,0.1,0.0,0.2,0.0,0.5
+BLACK_HOLE_BIG,Giga black hole,A growing orb of negative energy that destroys everything in its reach,Static Projectile,240,1.33s,,,,,,,,,,,,1,,,,,6,0.0,0.8,0.0,0.8,0.0,0.8,0.8,0.0,0.5
+WHITE_HOLE_BIG,Giga white hole,A growing orb of positive energy that destroys everything in its reach,Static Projectile,240,1.33s,,,,,,,,,,,,1,,,,,6,0.0,0.05,0.0,0.05,0.0,0.1,0.4,0.0,0.2
+BLACK_HOLE_GIGA,Omega Black Hole,Even light dies eventually...,Static Projectile,500,2.00s,,,,,,,,,,,,1,1.67s,,,,6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+WHITE_HOLE_GIGA,Omega white hole,A massive orb of positive energy that destroys everything in its reach,Static Projectile,500,2.00s,,,,,,,,,,,,1,1.67s,,,,6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+TENTACLE_PORTAL,Eldritch portal,Summons a one-way portal to a sinister realm,Projectile,140,0.50s,,,,,,,,,,,,,,,,,5,0.0,0.4,0.4,0.4,0.5,0.0,0.0,0.0,0.2
+SPITTER,Spitter bolt,A short-lived magical bolt,Projectile,5,-0.02s,,7.5,,,,,,,,,,2,,6,,,,1.0,1.0,1.0,0.5,0.0,0.0,0.0,0.0,0.0
+SPITTER_TIMER,Spitter bolt with timer,A short-lived magical bolt that casts another spell after a timer runs out,Projectile,10,-0.02s,,7.5,,,,,,,,,,2,,6,,,,0.5,0.5,0.5,1.0,0.0,0.0,0.0,0.0,0.0
+SPITTER_TIER_2,Large spitter bolt,A more powerful version of Spitter Bolt,Projectile,25,-0.03s,,12.5,,,,,,,,,,2,,8,,,,0.0,0.0,1.0,1.0,1.0,0.5,0.0,0.0,0.0
+SPITTER_TIER_2_TIMER,Large spitter bolt with timer,A more powerful version of Spitter Bolt that casts another spell after a timer runs out,Projectile,30,-0.03s,,12.5,,,,,,,,,,2,,8,,,,0.0,0.0,0.5,0.5,0.5,1.0,0.0,0.0,0.0
+SPITTER_TIER_3,Giant spitter bolt,The most powerful version of Spitter Bolt,Projectile,40,-0.07s,,15.0,,,,,,,,,,2,,9,,,,0.0,0.0,0.0,0.8,0.8,1.0,1.0,0.0,0.0
+SPITTER_TIER_3_TIMER,Giant spitter bolt with timer,The most powerful version of Spitter Bolt that casts another spell after a timer runs out,Projectile,45,-0.07s,,15.0,,,,,,,,,,2,,9,,,,0.0,0.0,0.0,0.0,0.5,0.65,0.5,0.0,0.0
+BUBBLESHOT,Bubble spark,"A bouncy, inaccurate spell",Projectile,5,-0.08s,,5.0,,,,,,,,,,4,,,,,,1.0,0.6,1.0,0.5,0.0,0.0,0.0,0.0,0.0
+BUBBLESHOT_TRIGGER,Bubble spark with trigger,"A bouncy, inaccurate spell that casts another spell upon collision",Projectile,16,-0.08s,,5.0,,,,,,,,,,4,,,,,,0.0,0.5,0.5,1.0,0.0,0.0,0.0,0.0,0.0
+DISC_BULLET,Disc projectile,Summons a sharp disc projectile,Projectile,20,0.17s,,,20.0,,,,,,,,,,,2,,=20.0%,,1.0,0.0,1.0,0.0,0.6,0.0,0.0,0.0,0.0
+DISC_BULLET_BIG,Giga disc projectile,"Summons a large, serrated disc with a curious flight pattern",Projectile,38,0.33s,,,62.5,,,,,,,,,,,3,,20,,0.6,0.0,0.7,0.0,0.8,0.0,0.0,0.0,0.0
+DISC_BULLET_BIGGER,Summon Omega Sawblade,That's a lot of sawblade,Projectile,70,0.67s,5,,37.5,,,,,,,,,,,6,,30,,0.0,0.0,0.1,0.6,0.0,1.0,0.0,0.0,0.4
+BOUNCY_ORB,Energy sphere,"A fast, arcing projectile",Projectile,20,0.17s,,5.0,5.0,,,,,,,,,2,,,,=20.0%,,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0
+BOUNCY_ORB_TIMER,Energy sphere with timer,"A fast, arcing projectile that casts another spell after a timer runs out",Projectile,50,0.17s,,5.0,5.0,,,,,,,,,2,,,,=20.0%,,0.5,0.0,0.5,0.0,0.5,0.0,0.0,0.0,0.0
+RUBBER_BALL,Bouncing burst,A very bouncy projectile,Projectile,5,-0.03s,,3.0,0.0,,,,,,,,,1,,-1,,,,1.0,1.0,0.0,0.0,0.0,0.0,0.2,0.0,0.0
+ARROW,Arrow,Summons an arrow,Projectile,15,0.17s,,,5.0,,,,,,,,,1,,-20,,=30.0%,,0.0,1.0,1.0,0.0,0.6,0.3,0.0,0.0,0.0
+POLLEN,Pollen,"A small, floating projectile that homes towards nearby creatures",Projectile,10,0.03s,,5.0,,,,,,,,,5.0,7,,20,,,,0.6,1.0,0.0,1.0,0.6,0.0,0.0,0.0,0.0
+LANCE,Glowing lance,A magical lance that cuts through soft materials,Projectile,30,0.33s,,35.0,,,,,,,,,,1,,-20,,=60.0%,,0.0,0.9,1.0,0.0,0.0,0.8,1.0,0.0,0.0
+LANCE_HOLY,Holy Lance,"A fast-flying, penetrating lance that glows with power",Projectile,120,0.50s,,,,43.75,,,,,,,30.0,30,,-10,,=60.0%,,0.0,0.0,0.0,0.5,0.0,0.8,1.0,0.0,0.0
+ROCKET,Magic missile,"A fiery, explosive projectile",Projectile,70,1.00s,,75.0,,,,,,,,,105.0,15,,,,=120.0%,10,0.0,1.0,1.0,1.0,0.5,0.3,0.0,0.0,0.0
+ROCKET_TIER_2,Large magic missile,A more powerful version of Magic missile,Projectile,90,1.50s,,100.0,,,,,,,,,117.5,32,,,,=160.0%,8,0.0,0.0,0.5,1.0,1.0,0.8,0.5,0.0,0.0
+ROCKET_TIER_3,Giant magic missile,The most powerful version of Magic missile,Projectile,120,2.00s,,125.0,,,,,,,,,130.0,42,,,,=180.0%,6,0.0,0.0,0.25,0.5,1.0,1.0,1.0,0.0,0.0
+GRENADE,Firebolt,"A bouncy, explosive bolt",Projectile,50,0.50s,,32.5,,,12.5,,,,,,47.5,7,,,,=80.0%,25,1.0,1.0,0.5,0.25,0.2,0.0,0.0,0.0,0.0
+GRENADE_TRIGGER,Firebolt with trigger,"A bouncy, explosive bolt that that casts another spell upon collision",Projectile,50,0.50s,,32.5,,,12.5,,,,,,47.5,7,,,,=80.0%,25,0.5,0.5,0.2,0.5,0.5,1.0,0.0,0.0,0.0
+GRENADE_TIER_2,Large firebolt,A more powerful version of Firebolt,Projectile,90,0.83s,,40.0,,,30.0,,,,,,60.0,25,,,,=120.0%,20,0.0,0.5,1.0,1.0,1.0,0.5,0.0,0.0,0.0
+GRENADE_TIER_3,Giant firebolt,The most powerful version of Firebolt,Projectile,90,1.33s,,50.0,,,45.0,,,,,,72.5,40,,,,=140.0%,20,0.0,0.25,0.5,0.75,1.0,1.0,0.0,0.0,0.0
+GRENADE_ANTI,Odd Firebolt,"A somewhat peculiar bouncy, explosive bolt",Projectile,50,0.50s,,25.0,,,20.0,,,,,,47.5,7,,,,=80.0%,25,0.4,0.4,0.7,0.4,0.4,0.4,0.0,0.0,0.0
+GRENADE_LARGE,Dropper bolt,A very heavy explosive bolt,Projectile,80,0.67s,,50.0,,,45.0,,,,,,97.5,16,,,,=80.0%,35,0.4,0.4,0.4,0.4,0.4,0.4,0.0,0.0,0.0
+MINE,Unstable crystal,A crystal that explodes when someone comes nearby,Projectile,20,0.50s,,,,,,,,,,,100.0,30,,,,=60.0%,15,0.0,1.0,0.0,0.75,1.0,0.0,0.5,0.0,0.0
+MINE_DEATH_TRIGGER,Unstable crystal with trigger,A crystal that explodes and casts another spell when someone comes nearby,Projectile,20,0.50s,,,,,,,,,,,100.0,30,,,,=60.0%,15,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0
+PIPE_BOMB,Dormant crystal,A crystal that explodes when caught in an explosion,Projectile,20,0.50s,,,,,,,,,,,137.5,30,,,,,20,0.0,0.0,1.0,1.0,0.6,0.0,0.0,0.0,0.0
+PIPE_BOMB_DEATH_TRIGGER,Dormant crystal with trigger,A crystal that explodes and casts another spell when caught in an explosion,Projectile,20,0.50s,,,,,,,,,,,137.5,30,,,,60,20,0.0,0.0,0.6,0.8,1.0,0.8,0.0,0.0,0.0
+FISH,Summon fish,FISH!,Projectile,90,1.33s,,,,,,,,,,,,,,,,,20,0.0,0.0,0.0,0.01,0.01,0.01,0.0,0.0,0.0
+EXPLODING_DEER,Summon deercoy,Summons a seemingly-innocuous deer,Projectile,120,1.33s,,,,,,,,,,,100.0,30,,,,,10,0.0,0.0,0.0,0.6,0.6,0.6,0.0,0.0,0.0
+EXPLODING_DUCKS,Flock of Ducks,Summons a chaotic flock of spicy ducks,Projectile,100,1.00s,,40.0,,,30.0,,,,,,60.0,25,0.33s,,,,20,0.0,0.0,0.0,0.8,0.5,0.6,0.0,0.0,0.0
+WORM_SHOT,Worm Launcher,Summons a giant worm to cause havoc for a moment!,Projectile,150,1.33s,,2.5,,,,,,,,,,30,0.67s,20,,,10,0.0,0.0,0.0,0.6,0.8,0.6,0.4,0.0,0.6
+BOMB_DETONATOR,Explosive Detonator,All nearby explosive spells cast by you instantly detonate,Static Projectile,50,,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,1.0,0.4,0.5,1.0,0.0,0.0
+LASER,Concentrated light,A pinpointed beam of light,Projectile,30,-0.37s,,9.75,,,,,,,,,5.5,3,,,,20,,0.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0
+MEGALASER,Intense concentrated light,A spectral wand is summoned that casts a huge beam of light,Projectile,110,1.50s,,125.0,,,,,,,,,5.5,3,,,,20,,0.0,0.0,0.0,0.6,0.6,0.8,0.6,0.0,0.3
+LIGHTNING,Lightning bolt,The primordial force of nature,Projectile,70,0.83s,,,,,,25.0,,,,,,35,,,,=180.0%,,0.0,1.0,0.9,0.0,0.0,0.7,1.0,0.0,0.0
+BALL_LIGHTNING,Ball Lightning,Summons three short range electrical orbs,Projectile,70,0.83s,,,,,,12.5,,,,,6.25,15,,,,=120.0%,,0.0,0.2,0.4,0.0,1.0,1.0,0.0,0.0,0.0
+LASER_EMITTER,Plasma beam,"An instantaneous, dangerous beam of light",Projectile,60,0.10s,,20.0,,,,,,,,,,,,,,20,,0.0,0.2,0.8,1.0,0.5,0.0,0.0,0.0,0.0
+LASER_EMITTER_FOUR,Plasma Beam Cross,"Four deadly plasma beams in a cross-shape. Look out, they can hurt you as well!",Projectile,80,0.25s,,20.0,,,,,,,,,,,,,,30,,0.0,0.2,0.9,0.3,0.5,1.0,0.0,0.0,0.0
+LASER_EMITTER_CUTTER,Plasma Cutter,A plasma beam specialized in cutting materials!,Projectile,40,,,20.0,,,,,,,,,,,0.17s,,,,,0.2,0.3,1.0,0.5,0.1,0.0,0.0,0.0,0.0
+DIGGER,Digging bolt,A bolt that is ideal for mining operations,Projectile,0,0.02s,,,,,,,7.5,,,,,6,-0.17s,,,,,0.0,1.0,0.5,0.0,0.0,0.0,0.0,0.0,0.0
+POWERDIGGER,Digging blast,More powerful digging,Projectile,0,0.02s,,,,,,,2.5,,,,,7,-0.17s,,,,,0.0,0.0,0.5,1.0,0.8,0.0,0.0,0.0,0.0
+CHAINSAW,Chainsaw,A good tool for cutting meat. Also has some magical properties...,Projectile,1,=0.00s,,,12.75,,,,,,,,,3,-0.17s,6,,,,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+LUMINOUS_DRILL,Luminous drill,"A pinpointed, short-ranged beam of concentrated light",Projectile,10,-0.58s,,10.0,,,,,,,,,,,-0.17s,,,,,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.1
+LASER_LUMINOUS_DRILL,Luminous drill with timer,"A pinpointed, short-ranged beam of concentrated light that casts another spell after a timer runs out",Projectile,30,-0.58s,,10.0,,,,,,,,,,,-0.17s,,,,,1.0,0.0,1.0,0.0,0.0,0.0,0.2,0.0,0.1
+TENTACLE,Summon Tentacle,Calls a terrifying appendage from another dimension,Projectile,20,0.67s,,,,,,,,20.0,,,,,,,,,,0.0,0.0,0.0,1.0,0.5,1.0,0.8,0.0,0.0
+TENTACLE_TIMER,Summon Tentacle with timer,Calls a terrifying appendage from another dimension! Comes with a timer,Projectile,20,0.67s,,,,,,,,20.0,,,,,,,,,,0.0,0.0,0.0,0.6,0.8,0.6,0.7,0.0,0.0
+HEAL_BULLET,Healing bolt,A magical bolt with rejuvenative powers,Projectile,15,0.07s,,,,,,,,,-8.75,,,2,,2,,,20,0.0,0.0,1.0,1.0,0.6,0.0,0.0,0.0,0.0
+ANTIHEAL,Deadly heal,"A projectile that at first deals damage, then heals over time",Projectile,20,0.13s,,30.0,,,,,,,,,,2,,3,,12,20,0.0,0.0,0.4,0.3,0.3,0.3,0.0,0.0,0.0
+SPIRAL_SHOT,Spiral shot,A mystical whirlwind of magic sparks,Projectile,50,0.33s,,5.0,,,,,,,,,,,,,,,15,0.0,0.0,0.0,0.0,0.7,0.8,0.7,0.0,0.0
+MAGIC_SHIELD,Magic guard,Four guarding lights rotate around you for a time,Projectile,40,0.33s,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,0.0,0.6,0.7,1.0,0.0,0.0
+BIG_MAGIC_SHIELD,Big magic guard,Eight guarding lights rotate around you for a time,Projectile,60,0.50s,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.4,0.5,0.6,0.0,0.2
+CHAIN_BOLT,Chain bolt,Fires a mysterious bolt that jumps from enemy to enemy,Projectile,80,0.75s,,25.0,,,,,,,,,,,,14,,,,0.75,0.0,0.0,0.0,1.0,0.8,0.6,0.0,0.0
+FIREBALL,Fireball,A powerful exploding spell,Projectile,70,0.83s,,,,,6.25,,,,,,50.0,15,,4,,20,15,1.0,0.0,0.0,0.7,1.0,0.0,0.5,0.0,0.0
+METEOR,Meteor,A destructive projectile from the skies!,Projectile,150,,,,,,56.25,,,,,,,45,,,,,10,0.0,0.0,0.0,0.0,0.6,0.6,0.7,0.0,0.5
+FLAMETHROWER,Flamethrower,A stream of fire!!,Projectile,20,,,,,,11.25,,,,,,12.5,8,,4,,,60,0.0,0.0,0.8,0.9,0.9,0.0,0.6,0.0,0.0
+ICEBALL,Iceball,A magical ball of frozen fire,Projectile,90,1.33s,,,,,,,,,,6.25,50.0,15,,8,,20,15,0.0,0.0,0.8,0.9,0.9,0.0,0.6,0.0,0.0
+SLIMEBALL,Slimeball,A dripping ball of poisonous slime,Projectile,20,0.17s,,6.25,,,,,,,,,7.5,9,,4,,,,1.0,0.0,0.0,1.0,0.7,0.0,0.0,0.0,0.0
+DARKFLAME,Path of dark flame,"A trail of dark, deadly flames",Projectile,90,0.33s,,20.0,,,,,,,,,,1,,,,,60,0.0,0.0,0.0,1.0,0.0,0.9,0.8,0.0,0.0
+MISSILE,Summon missile,A missile!!!,Projectile,60,,,50.0,,,,,,,,,25.0,,0.50s,3,,60,20,0.0,0.5,0.5,1.0,0.0,1.0,0.0,0.0,0.0
+FUNKY_SPELL,???,???,Projectile,5,-0.05s,,3.75,,,,,,,,,10.0,2,,2,1%,,,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,0.1
+PEBBLE,Summon rock spirit,Summons an autonomous rock ally,Projectile,120,1.33s,,,,,,,,,,,,,,,,,10,0.0,0.9,1.0,0.0,0.9,0.0,0.6,0.0,0.0
+DYNAMITE,Dynamite,Summons a small explosive,Projectile,50,0.83s,,,,,,,,,,,62.5,28,,6,,,16,1.0,0.9,0.8,0.7,0.6,0.0,0.0,0.0,0.0
+GLITTER_BOMB,Glitter bomb,Summons a bomb that explodes into volatile fragments,Projectile,70,0.83s,,,,,,,,,,,25.0,16,,12,,,16,0.8,0.9,0.8,0.7,0.6,0.0,0.0,0.0,0.0
+BUCKSHOT,Triplicate bolt,"A formation of three small, fast bolts",Projectile,25,0.13s,,4.625,,,,,,,,,,4,,14,,,,1.0,1.0,0.9,0.9,0.6,0.0,0.0,0.0,0.0
+FREEZING_GAZE,Freezing gaze,A heart-freezingly sinister aura,Projectile,45,0.33s,,,,,,,,,,10.0,,,,,,,20,0.0,0.0,0.9,1.0,1.0,0.0,0.0,0.0,0.0
+GLOWING_BOLT,Pinpoint of light,An extremely concentrated point of light that explodes after a moment,Projectile,65,0.67s,,5.0,,,,,,,,,10.0,20,,6,,,,0.0,0.0,0.0,0.8,0.9,1.0,0.0,0.0,0.1
+SPORE_POD,Prickly Spore Pod,Summons a spore pod that attaches to a surface and then grows and explodes into spikes,Projectile,20,0.67s,,2.5,,,,,,,,,,,,,,30,,0.0,0.7,0.8,0.9,0.8,0.6,0.0,0.0,0.0
+GLUE_SHOT,Glue Ball,A projectile that explodes into a sticky mess,Projectile,25,0.50s,,2.5,,,,,,,,,,4,,5,,,,0.0,0.0,0.7,0.4,0.2,0.5,0.0,0.0,0.0
+BOMB_HOLY,Holy Bomb,Summons a bomb that... well...,Projectile,300,0.67s,,,,,,,,,,,200.0,180,1.33s,,,100,2,0.0,0.0,0.2,0.2,0.2,0.2,0.2,0.0,0.5
+BOMB_HOLY_GIGA,Giga Holy Bomb,Bigger and therefore holier,Projectile,600,2.00s,,,,,,,,,,,500.0,320,2.67s,,,100,2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+PROPANE_TANK,Propane tank,Summons a propane tank. Be careful what you wish for.,Projectile,75,1.67s,,,,,,,,,,,325.0,60,,,,,10,0.0,0.0,1.0,1.0,0.8,0.8,0.7,0.0,0.0
+BOMB_CART,Bomb cart,Summons a self-propeled mine cart loaded with explosives,Projectile,75,1.00s,,,,,,,,,,,100.0,40,,,,200,6,0.0,0.0,0.6,0.6,0.5,0.8,0.6,0.0,0.0
+CURSED_ORB,Cursed sphere,A projectile that brings bad luck to anyone it hits,Projectile,40,0.33s,,15.0,,,,,,,,,,1,,,,=40.0%,,0.0,0.3,0.2,0.1,0.0,0.0,0.0,0.0,0.0
+EXPANDING_ORB,Expanding Sphere,A slow projectile that increases its damage over time,Projectile,70,0.50s,,75.0,,,,,,,,,,4,,,,=20.0%,,0.0,0.0,0.5,0.5,1.0,1.0,0.5,0.0,0.0
+CRUMBLING_EARTH,Earthquake,Calls the anger of the earth,Projectile,240,,,,,,,,,,,,,2,,,,,3,0.0,0.0,0.4,0.3,0.5,0.6,0.9,0.0,0.0
+SUMMON_ROCK,Rock,Create a mighty rock out of thin air,Projectile,100,,,,,,,,,,,,,,,,,,3,0.8,0.8,0.6,0.6,0.3,0.7,0.7,0.0,0.0
+SUMMON_EGG,Summon egg,Summons an egg that houses a friendly creature,Projectile,100,,,,,,,,,,,,,,,,,,2,0.7,0.8,0.8,0.7,0.6,0.6,0.5,0.0,0.0
+SUMMON_HOLLOW_EGG,Summon hollow egg,Summons an otherwise empty egg that casts a spell upon cracking open,Projectile,30,-0.20s,,,,,,,,,,,5.0,3,,,,,,0.6,0.8,0.7,0.0,0.0,0.8,0.3,0.0,0.0
+TNTBOX,Summon Explosive Box,Summons a box of explosive matter,Projectile,40,0.50s,,,,,,,,,,,125.0,40,,,,,15,0.0,0.8,0.9,0.5,0.0,0.4,0.0,0.0,0.0
+TNTBOX_BIG,Summon Large Explosive Box,Summons a large box of explosive matter,Projectile,40,0.50s,,,,,,,,,,,200.0,60,,,,,15,0.0,0.0,0.8,0.0,1.0,0.7,0.0,0.0,0.0
+SWARM_FLY,Summon fly swarm,Summons five flies to aid you in battle,Static Projectile,60,1.00s,,,,,,,,3.5000000000000004,,,,1,0.33s,6,,,,0.0,0.0,0.3,0.0,0.4,0.5,0.0,0.0,0.0
+SWARM_FIREBUG,Summon Firebug swarm,Summons four fire bugs to aid you in battle,Static Projectile,70,1.00s,,,,,3.75,,,,,,,1,0.33s,12,,,,0.0,0.0,0.2,0.0,0.0,0.4,0.5,0.0,0.0
+SWARM_WASP,Summon Wasp swarm,Summon six wasps to aid you in battle,Static Projectile,80,1.00s,,,,,,,,7.000000000000001,,,,1,0.33s,24,,,,0.0,0.0,0.0,0.0,0.2,0.5,0.6,0.0,0.0
+FRIEND_FLY,Summon Friendly fly,Summons a friendly fly that attacks your enemies!,Static Projectile,120,1.33s,,,,,,,,10.0,,,,1,0.67s,24,,,,0.0,0.0,0.0,0.0,0.2,0.6,0.5,0.0,0.0
+ACIDSHOT,Acid ball,A terrifying acidic projectile,Projectile,20,0.17s,,6.0,,,,,,,,,,9,,,,,20,0.0,1.0,1.0,0.9,0.6,0.0,0.0,0.0,0.0
+THUNDERBALL,Thunder charge,A projectile with immense stored electricity,Projectile,120,2.00s,,,,,,37.5,,,,,45.0,50,,,,,3,0.0,0.0,0.9,0.0,1.0,0.0,0.7,0.0,0.2
+FIREBOMB,Firebomb,"Slow, fiery bolt",Projectile,10,,,,,,10.0,,,,,,,7,,,,,,0.0,1.0,0.9,0.7,0.0,0.0,0.0,0.0,0.0
+SOILBALL,Chunk of soil,Don't soil yourself,Material,5,,,,,,,,,,,,,15,,,,,,0.0,0.8,0.8,1.0,0.0,0.75,0.0,0.0,0.0
+DEATH_CROSS,Death cross,A deadly energy cross that explodes after a short time,Projectile,80,0.67s,,,,,,,,,,,75.0,25,,,,,,0.0,1.0,0.8,0.6,0.5,0.5,0.3,0.0,0.0
+DEATH_CROSS_BIG,Giga death cross,"A giant, deadly energy cross that explodes after a short time",Projectile,150,1.17s,,,,,,,,,,,100.0,35,,,,30,8,0.0,0.0,0.4,0.5,0.55,0.3,0.4,0.0,0.2
+INFESTATION,Infestation,A bunch of magical sparks that fly in every direction,Projectile,40,-0.03s,,1.25,0.0,,,,,,,,,,,25,,,,0.0,0.0,0.1,0.3,0.4,0.0,0.0,0.0,0.0
+WALL_HORIZONTAL,Horizontal barrier,"A thin, horizontal barrier that harms passing creatures, including you",Static Projectile,70,0.08s,,,,,,,,,,,,,,,,,,0.4,0.4,0.6,0.0,0.5,0.2,0.0,0.0,0.0
+WALL_VERTICAL,Vertical barrier,"A thin, vertical barrier that harms passing creatures, including you",Static Projectile,70,0.08s,,,,,,,,,,,,,,,,,,0.4,0.4,0.6,0.0,0.5,0.2,0.0,0.0,0.0
+WALL_SQUARE,Square barrier,"A thin, square-shaped barrier that harms passing creatures, including you",Static Projectile,70,0.33s,,,,,,,,,,,,,,,,,20,0.3,0.2,0.6,0.0,0.5,0.4,0.4,0.0,0.0
+TEMPORARY_WALL,Summon Wall,Summons a shortlived obstacle,Utility,40,0.67s,,,,,,,,,,,,,,,,,20,0.1,0.1,0.3,0.0,0.4,0.2,0.0,0.0,0.0
+TEMPORARY_PLATFORM,Summon Platform,Summons a shortlived bit of ground,Utility,30,0.67s,,,,,,,,,,,,,,,,,20,0.1,0.1,0.3,0.0,0.4,0.2,0.0,0.0,0.0
+PURPLE_EXPLOSION_FIELD,Glittering field,Small explosions appear randomly over a large area,Static Projectile,90,0.17s,,,,,,,,,,,,,,,,,20,0.7,1.0,0.7,0.0,0.5,0.5,0.3,0.0,0.0
+DELAYED_SPELL,Delayed spellcast,"A static, magical phenomenon that casts 3 extra spells after a short while",Static Projectile,20,0.17s,,,,,,,,,,,,,,,,,,0.8,0.8,1.0,0.0,0.7,0.5,0.4,0.0,0.0
+LONG_DISTANCE_CAST,Long-distance cast,Casts a spell some distance away from the caster,Utility,0,-0.08s,,,,,,,,,,,,2,,,,,,0.6,0.7,0.8,0.0,0.6,0.3,0.4,0.0,0.0
+TELEPORT_CAST,Teleporting cast,Casts a spell from the closest enemy,Utility,100,0.33s,,,,,,,,,,,,,,24,,,,0.0,0.6,0.6,0.0,0.6,0.8,1.0,0.0,0.0
+SUPER_TELEPORT_CAST,Warp cast,"Makes a spell immediately jump a long distance, stopped by walls",Utility,20,0.17s,,,,,,,,,,,,,,-6,,,,0.0,0.0,0.2,0.0,0.6,0.8,0.8,0.0,0.0
+CASTER_CAST,Inner spell,Causes a projectile to be cast from where the caster is standing,Utility,10,,,,,,,,,,,,,,,-24,,,,0.0,0.0,0.2,0.0,0.2,0.4,0.4,0.0,0.2
+MIST_RADIOACTIVE,Toxic mist,A cloud of toxic mist,Projectile,40,0.17s,,,,,,,,,,,,,,,,,,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+MIST_ALCOHOL,mist of spirits,A cloud of potent alcohol,Projectile,40,0.17s,,,,,,,,,,,,,,,,,,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+MIST_SLIME,Slime mist,A cloud of slimy mist,Projectile,40,0.17s,,,,,,,,,,,,,,,,,,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+MIST_BLOOD,Blood mist,A cloud of blood mist,Projectile,40,0.17s,,,,,,,,,,,,,,,,,10,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+CIRCLE_FIRE,Circle of fire,An expanding circle of burning air,Material,20,0.33s,,,,,,,,,,,,,,,,,15,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+CIRCLE_ACID,Circle of acid,An expanding circle of dripping acid,Material,40,0.33s,,,,,,,,,,,,,,,,,4,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+CIRCLE_OIL,Circle of oil,An expanding circle of slick oil,Material,20,0.33s,,,,,,,,,,,,,,,,,15,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+CIRCLE_WATER,Circle of water,An expanding circle of water,Material,20,0.33s,,,,,,,,,,,,,,,,,15,0.0,0.4,0.4,0.4,0.4,0.0,0.0,0.0,0.0
+MATERIAL_WATER,Water,Transmute drops of water from nothing,Material,0,-0.25s,,,,,,,,,,,,,-0.17s,,,,,0.0,0.4,0.4,0.4,0.4,0.4,0.0,0.0,0.0
+MATERIAL_OIL,Oil,Transmute drops of oil from nothing,Material,0,-0.25s,,,,,,,,,,,,,-0.17s,,,,,0.0,0.4,0.4,0.4,0.4,0.4,0.0,0.0,0.0
+MATERIAL_BLOOD,Blood,Blood blood blood,Material,0,-0.25s,,,,,,,,,,,,,-0.17s,,,,250,0.0,0.4,0.4,0.4,0.4,0.4,0.0,0.0,0.0
+MATERIAL_ACID,Acid,Transmute drops of acid from nothing,Material,0,-0.25s,,,,,,,,,,,,,-0.17s,,,,,0.0,0.0,0.4,0.4,0.4,0.4,0.4,0.0,0.0
+MATERIAL_CEMENT,Cement,Transmute drops of wet cement from nothing,Material,0,-0.25s,,,,,,,,,,,,,-0.17s,,,,,0.0,0.0,0.4,0.4,0.4,0.4,0.4,0.0,0.0
+TELEPORT_PROJECTILE,Teleport bolt,A magical bolt that moves you wherever it ends up flying,Projectile,40,0.05s,,,,,,,,,,,,2,,-2,,,,0.6,0.6,0.6,0.0,0.4,0.4,0.4,0.0,0.0
+TELEPORT_PROJECTILE_SHORT,Small Teleport Bolt,A shortlived magical bolt that moves you wherever it ends up flying,Projectile,20,,,,,,,,,,,,,2,,-2,,,,0.6,0.6,0.6,0.0,0.4,0.4,0.4,0.0,0.0
+TELEPORT_PROJECTILE_STATIC,Return,"After a period of time, you'll be returned to where you cast this spell",Projectile,40,0.05s,,,,,,,,,,,,2,,-2,,,,0.6,0.6,0.6,0.0,0.4,0.4,0.4,0.0,0.0
+SWAPPER_PROJECTILE,Swapper,It was theorized that the source of qualia would be transferred …But it turns out it was the whole body all along.,Projectile,5,0.05s,,,,,,,,,,,,2,,-2,5%,,,0.05,0.05,0.1,0.0,0.4,0.4,0.1,0.0,0.0
+TELEPORT_PROJECTILE_CLOSER,Homebringer Teleport Bolt,Brings the target hit closer to you,Projectile,20,,,,,,,,,,,,,2,,-2,,,,0.4,0.6,0.6,0.0,0.7,0.4,0.4,0.0,0.0
+NUKE,Nuke,Take cover!,Projectile,200,=20.00s,,75.0,,,,,,,,,250.0,250,10.00s,,,300,1,0.0,0.3,0.0,0.0,0.0,1.0,1.0,0.0,0.2
+NUKE_GIGA,Giga Nuke,What do you expect?,Projectile,500,=50.00s,,250.0,,,,,,,,,500.0,400,13.33s,,,300,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+FIREWORK,Fireworks!,"A fiery, explosive projectile",Projectile,70,1.00s,,,,,,,,,,,,,,,,=120.0%,25,0.0,1.0,0.8,1.0,1.0,0.5,0.3,0.0,0.0
+TOUCH_GOLD,Touch of Gold,"Transmutes everything in a short radius into gold, including walls, creatures... and you",Material,300,,,,,,,,,,,,,,,,,,1,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.5
+TOUCH_WATER,Touch of Water,"Transmutes everything in a short radius into water, including walls, creatures... and you",Material,280,,,,,,,,,,,,,,,,,,5,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.4
+TOUCH_OIL,Touch of Oil,"Transmutes everything in a short radius into oil, including walls, creatures... and you",Material,260,,,,,,,,,,,,,,,,,,5,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.4
+TOUCH_ALCOHOL,Touch of Spirits,"Transmutes everything in a short radius into alcohol, including walls, creatures... and you",Material,240,,,,,,,,,,,,,,,,,,5,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.4
+TOUCH_PISS,Touch of Gold?,"Transmutes everything in a short radius into urine, including walls, creatures... and you",Material,190,,,,,,,,,,,,,,,,,,4,0.0,0.0,0.0,0.0,0.0,0.035,0.035,0.035,0.1
+TOUCH_GRASS,Touch of Grass,"Transmutes everything in a short radius into Earth, including walls, creatures... and you. Unless…",Material,190,,,,,,,,,,,,,,,,,,4,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.2
+TOUCH_BLOOD,Touch of Blood,"Transmutes everything in a short radius into blood, including walls, creatures... and you",Material,270,,,,,,,,,,,,,,,,,,3,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.5
+TOUCH_SMOKE,Touch of Smoke,"Transmutes everything in a short radius into smoke, including walls, creatures... and you",Material,230,,,,,,,,,,,,,,,,,,5,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.1,0.4
+DESTRUCTION,Destruction,"Instantly decimates foes around you, at the cost of your HP",Static Projectile,240,2.50s,,,,,,,,,,,,,4.00s,,,,5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+MASS_POLYMORPH,Muodonmuutos,Baa,Static Projectile,220,2.33s,,,,,,,,,,,,,4.00s,,,,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+BURST_2,Double spell,Simultaneously casts 2 spells,Draw Many,0,,,,,,,,,,,,,,,,,,,0.8,0.8,0.8,0.8,0.8,0.8,0.8,0.0,0.0
+BURST_3,Triple spell,Simultaneously casts 3 spells,Draw Many,2,,,,,,,,,,,,,,,,,,,0.0,0.7,0.7,0.7,0.7,0.7,0.7,0.0,0.0
+BURST_4,Quadruple spell,Simultaneously casts 4 spells,Draw Many,5,,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.5,0.6,0.6,0.6,0.0,0.0
+BURST_8,Octuple spell,Simultaneously cast 8 spells,Draw Many,30,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.0,0.5
+BURST_X,Myriad Spell,Simultaneously casts as many spells as you have left uncast in your wand,Draw Many,50,,,,,,,,,,,,,,,,,,30,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.0,0.5
+SCATTER_2,Double scatter spell,Simultaneously casts 2 spells with low accuracy,Draw Many,0,,,,,,,,,,,,,,,10,,,,0.8,0.8,0.7,0.0,0.0,0.0,0.0,0.0,0.0
+SCATTER_3,Triple scatter spell,Simultaneously casts 3 spells with low accuracy,Draw Many,1,,,,,,,,,,,,,,,20,,,,0.6,0.7,0.7,0.8,0.0,0.0,0.0,0.0,0.0
+SCATTER_4,Quadruple scatter spell,Simultaneously casts 4 spells with low accuracy,Draw Many,2,,,,,,,,,,,,,,,40,,,,0.0,0.5,0.6,0.7,0.8,0.8,0.6,0.0,0.0
+I_SHAPE,Formation - behind your back,Casts two spells: one ahead of and one behind the caster,Draw Many,0,,,,,,,,,,,,,,,-5,,,,0.0,0.4,0.5,0.3,0.0,0.0,0.0,0.0,0.0
+Y_SHAPE,Formation - bifurcated,Casts 2 spells in a bifurcated pattern,Draw Many,2,,,,,,,,,,,,,,,-8,,,,0.8,0.5,0.4,0.3,0.0,0.0,0.0,0.0,0.0
+T_SHAPE,Formation - above and below,"Casts 3 spells - ahead, above and below the caster",Draw Many,3,,,,,,,,,,,,,,,-8,,,,0.0,0.4,0.5,0.4,0.3,0.0,0.0,0.0,0.0
+W_SHAPE,Formation - trifurcated,Casts 3 spells in a trifurcated pattern,Draw Many,3,,,,,,,,,,,,,,,-5,,,,0.0,0.0,0.4,0.3,0.5,0.3,0.3,0.0,0.0
+CIRCLE_SHAPE,Formation - hexagon,Casts 6 spells in a hexagonal pattern,Draw Many,6,,,,,,,,,,,,,,,-15,,,,0.0,0.1,0.2,0.3,0.3,0.3,0.3,0.0,0.0
+PENTAGRAM_SHAPE,Formation - pentagon,Casts 5 spells in a pentagonal pattern,Draw Many,5,,,,,,,,,,,,,,,-12,,,,0.0,0.4,0.4,0.3,0.2,0.1,0.0,0.0,0.0
+I_SHOT,Iplicate Spell,"Casts a copy of a projectile behind you, but the copy still cost mana",Utility,40,,,,,,,,,,,,,,,,,,30,0.0,0.1,0.2,0.5,0.0,0.0,0.0,0.0,0.0
+Y_SHOT,Yplicate Spell,"Casts a copy of a projectile in a bifurcated pattern, but the copy still cost mana",Utility,40,,,,,,,,,,,,,,,,,,30,0.0,0.1,0.2,0.5,0.0,0.0,0.0,0.0,0.0
+T_SHOT,Tiplicate Spell,"Casts copies of a projectile above and below you, but the copies still cost mana",Utility,60,,,,,,,,,,,,,,,,,,25,0.0,0.0,0.1,0.2,0.0,0.5,0.0,0.0,0.0
+W_SHOT,Wuplicate Spell,"Casts copies of a projectile in a trifurcated pattern, but the copies still cost mana",Utility,70,,,,,,,,,,,,,,,,,,20,0.0,0.0,0.1,0.2,0.0,0.5,0.4,0.0,0.0
+QUAD_SHOT,Quplicate Spell,"Casts copies of a projectile in a tetragonal pattern, but the copies still cost mana",Utility,90,,,,,,,,,,,,,,,,,,20,0.0,0.1,0.2,0.0,0.5,0.0,0.0,0.0,0.0
+PENTA_SHOT,Peplicate Spell,"Casts 5 copies of a projectile in a pentagonal pattern, but the copies still cost mana",Utility,110,,,,,,,,,,,,,,,,,,20,0.0,0.0,0.0,0.1,0.2,0.5,0.5,0.0,0.2
+HEXA_SHOT,Heplicate Spell,"Casts 6 copies of a projectile in a hexagonal pattern, but the copies still cost mana",Utility,130,,,,,,,,,,,,,,,,,,20,0.0,0.0,0.0,0.1,0.2,0.5,0.5,0.0,0.2
+SPREAD_REDUCE,Reduce spread,Reduces the spread of a spell,Modifier,1,,,,,,,,,,,,,,,-60,,,,0.0,0.8,0.8,0.8,0.8,0.7,0.6,0.0,0.0
+HEAVY_SPREAD,Heavy spread,"Gives a projectile a much lower cast delay, but no respect to your aim",Modifier,2,-0.12s,,,,,,,,,,,,,-0.25s,720,,,,0.6,0.7,0.8,0.0,0.8,0.8,0.6,0.0,0.0
+RECHARGE,Reduce recharge time,Reduces the time between spellcasts,Modifier,12,-0.17s,,,,,,,,,,,,,-0.33s,,,,,0.0,0.8,0.9,1.0,0.8,0.9,1.0,0.0,0.0
+LIFETIME,Increase lifetime,Increases the lifetime of a spell,Modifier,40,0.22s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.5,0.5,0.5,0.75,0.0,0.1
+LIFETIME_DOWN,Reduce lifetime,Reduces the lifetime of a spell,Modifier,10,-0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.5,0.5,0.75,0.5,0.0,0.1
+NOLLA,Nolla,The duration of a projectile is set to zero,Modifier,1,-0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.2,0.5,0.5,0.0,1.0
+SLOW_BUT_STEADY,Slow But Steady,The reload time of the wand is set to exactly 1.5 seconds,Modifier,0,,,,,,,,,,,,,,=1.50s,,,-80,,0.0,0.0,0.0,0.1,0.2,0.6,0.6,0.0,0.4
+EXPLOSION_REMOVE,Remove Explosion,Makes a projectile no longer explode,Modifier,0,-0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.6,0.7,0.2,0.0,0.0
+EXPLOSION_TINY,Concentrated Explosion,Limits the radius of a projectile's explosion heavily,Modifier,40,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.6,0.7,0.2,0.0,0.0
+LASER_EMITTER_WIDER,Plasma Beam Enhancer,Makes plasma beam spell's beam wider,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.4,0.0,0.0,0.0,0.0
+MANA_REDUCE,Add mana,Adds 30 mana to the wand,Modifier,-30,0.17s,,,,,,,,,,,,,,,,,,0.0,0.7,0.9,1.0,1.0,1.0,1.0,0.0,0.0
+BLOOD_MAGIC,Blood magic,"Reduces a spell's mana cost and recharge time greatly, at the costs of four health points",Utility,-100,-0.33s,,,,,,,,,,,,,-0.33s,,,,,0.0,0.0,0.0,0.0,0.0,0.3,0.7,0.0,0.5
+MONEY_MAGIC,Gold to Power,Spends 5% of your current gold and adds damage to a projectile proportional to the amount spent,Utility,30,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.0,0.8,0.3,0.0,0.5
+BLOOD_TO_POWER,Blood to Power,A projectile gains additional damage at the cost of 20% of your health,Utility,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.0,0.8,0.2,0.0,0.5
+DUPLICATE,Spell duplication,Duplicates every spell cast before it,Other,250,0.33s,,,,,,,,,,,,,0.33s,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
+QUANTUM_SPLIT,Quantum Split,Makes a projectile split into three projectiles whose existences are entangled,Modifier,10,0.08s,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,0.6,0.5,0.5,1.0,0.0,0.0
+GRAVITY,Gravity,Increases the effect gravity has on a projectile,Modifier,1,,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,0.4,0.4,0.3,0.3,0.0,0.0
+GRAVITY_ANTI,Anti-gravity,Applies a lifting force to a projectile,Modifier,1,,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,0.4,0.4,0.3,0.3,0.0,0.0
+SINEWAVE,Slithering path,"Makes a projectile move rapidly in a slithering manner, like a snake",Modifier,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.0,0.55,0.0,0.4,0.0,0.0
+CHAOTIC_ARC,Chaotic path,Causes a projectile to chaotically fly wherever it wishes,Modifier,0,,,,,,,,,,,,,,,,,,,0.0,0.4,0.0,0.55,0.0,0.4,0.0,0.0,0.0
+PINGPONG_PATH,Ping-pong path,Makes a projectile fly back and forth,Modifier,0,,,,,,,,,,,,,,,,,,,0.0,0.4,0.0,0.5,0.0,0.4,0.0,0.0,0.0
+AVOIDING_ARC,Avoiding arc,Makes a projectile shy away from obstacles,Modifier,0,0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,0.0,0.4,0.0,0.4,0.0,0.0
+FLOATING_ARC,Floating arc,Makes a projectile float above the ground,Modifier,0,0.17s,,,,,,,,,,,,,,,,,,0.0,0.4,0.0,0.4,0.0,0.5,0.0,0.0,0.0
+FLY_DOWNWARDS,Fly downwards,Causes a projectile to aim straight downwards a short time after casting,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.3,0.0,0.45,0.0,0.3,0.0,0.0,0.0
+FLY_UPWARDS,Fly upwards,Causes a projectile to aim straight upwards a short time after casting,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.0,0.45,0.0,0.3,0.0,0.0
+HORIZONTAL_ARC,Horizontal path,"Forces a projectile on a horizontal path, but increases its damage",Modifier,0,-0.10s,8,,,,,,,,,,,,,,,,,0.0,0.4,0.0,0.4,0.0,0.4,0.0,0.0,0.0
+LINE_ARC,Linear arc,Makes a projectile fly only in cardinal or diagonal lines,Modifier,0,-0.07s,5,,,,,,,,,,,,,,,,,0.0,0.3,0.0,0.4,0.0,0.5,0.0,0.0,0.0
+ORBIT_SHOT,Orbiting Arc,A projectile orbits the point of its origin,Modifier,0,-0.10s,2,,,,,,,,,,,,,,,,,0.0,0.2,0.4,0.4,0.3,0.0,0.0,0.0,0.0
+SPIRALING_SHOT,Spiral Arc,A projectile flies in a spiralling pattern,Modifier,0,-0.10s,2,,,,,,,,,,,,,,,,,0.0,0.2,0.3,0.4,0.5,0.0,0.0,0.0,0.0
+PHASING_ARC,Phasing Arc,"Makes a projectile fly much slower, but teleport short distances over its flight",Modifier,2,-0.20s,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.3,0.6,0.1,0.0,0.0,0.0
+TRUE_ORBIT,True Orbit,Makes a projectile rotate around the caster like an orbiting planet,Modifier,2,-0.33s,2,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.3,0.4,0.0,0.0,0.0,0.0
+BOUNCE,Bounce,Makes a projectile bounce on impact,Modifier,0,,,,,,,,,,,,,,,,,,,0.0,0.0,1.0,1.0,0.4,0.0,0.2,0.0,0.0
+REMOVE_BOUNCE,Remove Bounce,A normally bouncy projectile stops doing so,Modifier,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.2,1.0,1.0,0.0,0.0,0.0
+HOMING,Homing,Makes a projectile accelerate towards your foes,Modifier,70,,,,,,,,,,,,,,,,,,,0.0,0.1,0.4,0.4,0.4,0.4,0.4,0.0,0.0
+ANTI_HOMING,Anti Homing,Makes a projectile accelerate away from your foes,Modifier,1,-0.33s,,,,,,,,,,,,,,,,,,0.0,0.05,0.3,0.3,0.1,0.1,0.01,0.0,0.0
+HOMING_WAND,Wand Homing,Makes a projectile accelerate towards wands,Modifier,200,,,,,,,,,,,,,,,,,,,0.0,1e-05,0.08,0.0,0.08,0.25,0.25,0.0,0.2
+HOMING_SHORT,Short-range Homing,A projectile flies towards targets when near them,Modifier,40,,,,,,,,,,,,,,,,,,,0.0,0.4,0.8,1.0,0.4,0.3,0.1,0.0,0.0
+HOMING_ROTATE,Rotate towards foes,Makes a projectile turn towards your foes,Modifier,40,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.4,0.6,0.4,0.4,0.0,0.0
+HOMING_SHOOTER,Boomerang,Gives a projectile a path that curves towards you,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.3,0.2,0.0,0.2,0.0,0.0
+AUTOAIM,Auto-Aim,Makes a projectile turns towards the nearest visible enemy,Modifier,25,,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.4,0.4,0.4,0.4,0.0,0.0
+HOMING_ACCELERATING,Accelerative Homing,A projectile homes towards enemies at an increasing pace,Modifier,60,,,,,,,,,,,,,,,,,,,0.0,0.1,0.3,0.3,0.5,0.0,0.0,0.0,0.0
+HOMING_CURSOR,Aiming Arc,A projectile rotates towards the direction you're aiming,Modifier,30,,,,,,,,,,,,,,,,,,,0.0,0.0,0.7,0.7,0.4,0.4,1.0,0.0,0.0
+HOMING_AREA,Projectile Area Teleport,"If a valid target appears somewhere in the proximity of a projectile, the projectile will teleport right on top of the target",Modifier,60,0.13s,,,,,,,,,,,,,,6,,,,0.0,0.0,0.2,0.4,0.6,0.7,0.4,0.0,0.0
+PIERCING_SHOT,Piercing shot,"Makes a projectile fly through enemies, but harmful to the caster",Modifier,140,,-15,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.5,0.6,0.6,0.4,0.0,0.0
+CLIPPING_SHOT,Drilling shot,Gives a projectile the power to go through the ground,Modifier,160,0.83s,,,,,,,,,,,,,0.67s,,,,,0.0,0.0,0.2,0.3,0.6,0.4,0.6,0.0,0.0
+DAMAGE,Damage Plus,Increases the damage done by a projectile,Modifier,5,0.08s,10,,,,,,,,,,,,,,,10,,0.0,0.6,0.6,0.8,0.6,0.6,0.0,0.0,0.0
+DAMAGE_RANDOM,Random damage,Randomly increases or lowers the damage done by projectiles,Modifier,15,0.08s,10,,,,,,,,,,,,,,,10,,0.0,0.0,0.0,0.7,0.6,0.6,0.0,0.0,0.0
+BLOODLUST,Bloodlust,"A projectile gains a hefty damage boost, but is also able to hurt you",Modifier,2,0.13s,32,,,,,,,,,,,,,6,,30,,0.0,0.2,0.0,0.3,0.6,0.7,0.3,0.0,0.0
+DAMAGE_FOREVER,Mana To Damage,"If the wand has more than 50 mana, all mana over that is converted into additional damage",Modifier,0,0.25s,1,,,,,,,,,,,,0.17s,,,10,20,0.0,0.0,0.2,0.3,0.6,0.5,0.2,0.0,0.2
+CRITICAL_HIT,Critical Plus,Gives a projectile +15% chance of a critical hit,Modifier,5,,,,,,,,,,,,,,,,15%,,,0.0,0.5,0.6,0.6,0.7,0.6,0.0,0.0,0.0
+AREA_DAMAGE,Damage field,Gives a projectile an energy field that constantly deals 3.5 damage to nearby creatures,Modifier,30,,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.5,0.5,0.5,0.6,0.0,0.0
+SPELLS_TO_POWER,Spells to Power,Converts any nearby projectiles cast by you into extra damage,Modifier,110,0.67s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.5,0.5,0.5,0.0,0.1
+ESSENCE_TO_POWER,Essence to Power,Increases a projectile's damage based on the number of creatures nearby,Modifier,110,0.33s,,,,,,,,,,,,,,,,,,0.0,0.2,0.5,0.5,0.0,0.0,0.5,0.0,0.1
+ZERO_DAMAGE,Null shot,Increases a projectile's duration dramatically but removes all damage & explosion from it,Modifier,5,-0.08s,,,,,,,,,,,,,,,=0%,-10,,0.0,0.0,0.0,0.3,0.3,0.6,0.0,0.0,0.3
+HEAVY_SHOT,Heavy Shot,"Greatly increases the damage done by a projectile, at the cost of its speed",Modifier,7,0.17s,44,,,,,,,,,,,,,,,50,,0.0,0.0,0.4,0.4,0.5,0.0,0.0,0.0,0.0
+LIGHT_SHOT,Light shot,"Makes a projectile move considerably faster, but deal less damage",Modifier,5,-0.05s,-25,,,,,,,,,,,,,-6,,-10,,0.0,0.0,0.3,0.5,0.4,0.0,0.0,0.0,0.0
+KNOCKBACK,Knockback,Gives a projectile the power to knock back the foes it hits,Modifier,5,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.7,0.0,0.6,0.0,0.0,0.0
+RECOIL,Recoil,Increases the recoil when casting spells,Modifier,5,,,,,,,,,,,,,,,,,200,,0.0,0.0,0.6,0.0,0.7,0.0,0.0,0.0,0.0
+RECOIL_DAMPER,Recoil Damper,Reduces the recoil when casting spells,Modifier,5,,,,,,,,,,,,,,,,,-200,,0.0,0.0,0.0,0.6,0.0,0.0,0.7,0.0,0.0
+SPEED,Speed Up,Increases the speed at which a projectile flies through the air,Modifier,3,,,,,,,,,,,,,,,,,,,0.0,1.0,0.5,0.5,0.0,0.0,0.0,0.0,0.0
+ACCELERATING_SHOT,Accelerating shot,Causes a projectile to accelerate as it flies,Modifier,20,0.13s,,,,,,,,,,,,,,,,10,,0.0,0.0,0.5,0.4,1.0,0.0,0.0,0.0,0.0
+DECELERATING_SHOT,Decelerating shot,Makes a projectile decelerate as it flies,Modifier,10,-0.13s,,,,,,,,,,,,,,,,-10,,0.0,0.0,0.4,0.1,0.7,0.0,0.0,0.0,0.0
+EXPLOSIVE_PROJECTILE,Explosive projectile,Makes a projectile more destructive to the environment,Modifier,30,0.67s,,,,,,,,,,,,,,,,30,,0.0,0.0,1.0,1.0,0.8,0.0,0.0,0.0,0.0
+CLUSTERMOD,Clusterbolt,Makes a projectile release a cluster of explosive bolts upon hitting a wall,Modifier,30,0.33s,,,,,,,,,,,,,,,,10,,0.0,0.5,1.0,0.6,0.0,0.0,0.0,0.0,0.0
+WATER_TO_POISON,Water to poison,Makes any water within a projectile's range turns into poison,Modifier,30,0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+BLOOD_TO_ACID,Blood to acid,Makes any blood within a projectile's range turns into acid,Modifier,30,0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+LAVA_TO_BLOOD,Lava to blood,Makes any lava within a projectile's range turn into blood,Modifier,30,0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+LIQUID_TO_EXPLOSION,Liquid Detonation,Converts nearby nonmagical liquids into explosive gunpowder,Modifier,40,0.33s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+TOXIC_TO_ACID,Toxic sludge to acid,Makes any toxic sludge within a projectile's range turn into acid,Modifier,50,0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+STATIC_TO_SAND,Ground to sand,"Makes any hard, solid materials within a projectile's range turn into sand",Modifier,70,1.00s,,,,,,,,,,,,,,,,,8,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.2
+TRANSMUTATION,Chaotic transmutation,Transmutes various liquids and powdery substances within a projectile's range into something else,Modifier,80,0.33s,,,,,,,,,,,,,,,,,8,0.0,0.0,0.3,0.3,0.3,0.3,0.3,0.0,0.2
+RANDOM_EXPLOSION,Chaos magic,Makes a projectile launch a random spell (out of a limited selection) when it hits something,Modifier,120,0.67s,,,,,,,,,,,,,,,,,30,0.0,0.0,0.0,0.3,0.0,0.6,1.0,0.0,0.0
+NECROMANCY,Necromancy,Makes corpses of creatures killed by a projectile rise to your aid,Modifier,20,0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.6,0.6,0.3,0.0,0.0,0.0
+LIGHT,Light,Makes a projectile illuminate its surroundings,Modifier,1,,,,,,,,,,,,,,,,,,,1.0,0.8,0.6,0.4,0.2,0.0,0.0,0.0,0.0
+EXPLOSION,Explosion,A powerful explosion,Static Projectile,80,0.05s,,,,,,,,,,,68.75,15,,,,,,0.5,0.0,1.0,0.0,1.0,0.7,0.0,0.0,0.0
+EXPLOSION_LIGHT,Magical Explosion,A large explosion that doesn't damage the ground,Static Projectile,80,0.05s,,,,,,,,,,,93.75,35,,,,,,0.0,0.0,0.5,1.0,0.0,0.7,0.5,0.0,0.0
+FIRE_BLAST,Explosion of brimstone,A fiery explosion,Static Projectile,10,0.05s,,,,,,,,,,,7.5,30,,,,,,0.5,0.7,0.0,0.6,0.0,0.4,0.0,0.0,0.0
+POISON_BLAST,Explosion of poison,An alchemical explosion,Static Projectile,30,0.05s,,,,,,,,,,,7.5,9,,,,,,0.0,0.5,0.8,0.0,0.4,0.0,0.3,0.0,0.0
+ALCOHOL_BLAST,Explosion of spirits,An inebriating explosion,Static Projectile,30,0.05s,,,,,,,,,,,7.5,12,,,,,,0.0,0.5,0.6,0.0,0.65,0.0,0.3,0.0,0.0
+THUNDER_BLAST,Explosion of thunder,An electric explosion,Static Projectile,110,0.25s,,,,,,,,,,,45.0,28,,,,30,,0.0,0.5,0.0,0.6,0.0,0.7,0.5,0.0,0.1
+BERSERK_FIELD,Circle of fervour,A field of berserk magic,Static Projectile,30,0.25s,,,,,,,,,,,,,,,,,15,0.0,0.0,0.3,0.6,0.3,0.0,0.0,0.0,0.0
+POLYMORPH_FIELD,Circle of transmogrification,A field of sheep-like magic,Static Projectile,50,0.25s,,,,,,,,,,,,,,,,,5,0.3,0.3,0.3,0.8,0.8,0.3,0.3,0.0,0.0
+CHAOS_POLYMORPH_FIELD,Circle of unstable metamorphosis,A field of transformative magic,Static Projectile,20,0.25s,,,,,,,,,,,,,,,,,10,0.0,0.3,0.3,0.5,0.6,0.3,0.3,0.0,0.0
+ELECTROCUTION_FIELD,Circle of thunder,A field of electrifying magic,Static Projectile,60,0.25s,,,,,,,,,,,,,,,,,15,0.0,0.3,0.0,0.6,0.0,0.8,0.3,0.0,0.0
+FREEZE_FIELD,Circle of stillness,A field of freezing magic,Static Projectile,50,0.25s,,,,,,,,,,,,,,,,,15,0.3,0.0,0.6,0.0,0.7,0.3,0.0,0.0,0.0
+REGENERATION_FIELD,Circle of vigour,A field of regenerative magic,Static Projectile,80,0.25s,,,,,,,,,-1.25,,,,,,,,2,0.0,0.3,0.3,0.4,0.3,0.0,0.0,0.0,0.0
+TELEPORTATION_FIELD,Circle of displacement,A field of teleportative magic,Static Projectile,30,0.25s,,,,,,,,,,,,,,,,,15,0.3,0.6,0.3,0.3,0.6,0.3,0.0,0.0,0.0
+LEVITATION_FIELD,Circle of buoyancy,A field of levitative magic,Static Projectile,10,0.25s,,,,,,,,,,,,,,,,,15,0.0,0.3,0.6,0.6,0.3,0.0,0.0,0.0,0.0
+SHIELD_FIELD,Circle of shielding,A field of protective magic,Static Projectile,20,0.25s,,,,,,,,,,,,,,,,,10,0.0,0.0,0.3,0.3,0.4,0.5,0.3,0.0,0.0
+PROJECTILE_TRANSMUTATION_FIELD,Projectile transmutation field,Projectiles caught within the field transform into harmless critters,Static Projectile,120,0.25s,,,,,,,,,,,,,,,,,6,0.0,0.0,0.3,0.4,0.4,0.3,0.3,0.0,0.0
+PROJECTILE_THUNDER_FIELD,Projectile thunder field,Projectiles caught within the field transform into blasts of lightning,Static Projectile,140,0.25s,,,,,,,,,,,,,,,,,6,0.0,0.0,0.0,0.3,0.3,0.5,0.3,0.0,0.0
+PROJECTILE_GRAVITY_FIELD,Projectile gravity field,Projectiles caught within the field are attracted towards its center,Static Projectile,120,0.25s,,,,,,,,,,,,,,,,,6,0.0,0.0,0.6,0.0,0.0,0.3,0.3,0.0,0.0
+VACUUM_POWDER,Powder Vacuum Field,Sucks powder-like materials nearby and releases them upon expiring,Static Projectile,40,0.17s,,,,,,,,,,,,,,,,,20,0.0,0.0,0.3,0.7,0.0,0.3,0.4,0.0,0.0
+VACUUM_LIQUID,Liquid Vacuum Field,Sucks liquid materials nearby and releases them upon expiring,Static Projectile,40,0.17s,,,,,,,,,,,,,,,,,20,0.0,0.0,0.3,0.0,0.7,0.4,0.3,0.0,0.0
+VACUUM_ENTITIES,Vacuum Field,Sucks nearby projectiles and creatures into the middle of the field instantaneously,Static Projectile,50,0.17s,,,,,,,,,,,,,,,,,20,0.0,0.0,0.3,0.7,0.0,0.3,0.4,0.0,0.0
+SEA_LAVA,Sea of lava,Summons a large body of lava below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.2,0.0,0.0,0.0,0.2,0.5,0.6,0.0,0.0
+SEA_ALCOHOL,Sea of alcohol,Summons a large body of tasty alcohol below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.3,0.0,0.0,0.0,0.5,0.6,0.3,0.0,0.0
+SEA_OIL,Sea of oil,Summons a large body of oil below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.3,0.0,0.0,0.0,0.5,0.6,0.3,0.0,0.0
+SEA_WATER,Sea of water,Summons a large body of water below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.5,0.0,0.0,0.0,0.4,0.3,0.2,0.0,0.0
+SEA_SWAMP,Summon Swamp,Summons a large swamp below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+SEA_ACID,Sea of acid,Summons a large body of acid below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.2,0.0,0.0,0.0,0.2,0.4,0.5,0.0,0.0
+SEA_ACID_GAS,Sea of flammable gas,Summons a large body of flammable gas below the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,3,0.3,0.0,0.0,0.0,0.4,0.4,0.3,0.0,0.0
+SEA_MIMIC,Sea of Mimicium,Summons a large body of mimicium under the caster,Material,140,0.25s,,,,,,,,,,,,,,,,,2,0.05,0.0,0.0,0.0,0.05,0.1,0.1,0.0,0.2
+CLOUD_WATER,Rain cloud,Creates a watery weather phenomenon,Static Projectile,30,0.25s,,,,,,,,,,,,,,,,,10,0.2,0.3,0.4,0.4,0.3,0.2,0.0,0.0,0.0
+CLOUD_OIL,Oil cloud,Creates a rain of oil,Static Projectile,20,0.25s,,,,,,,,,,,,,,,,,15,0.2,0.3,0.4,0.4,0.3,0.2,0.0,0.0,0.0
+CLOUD_BLOOD,Blood cloud,Creates a rain of blood,Static Projectile,60,0.50s,,,,,,,,,,,,,,,,,3,0.2,0.3,0.3,0.4,0.3,0.2,0.0,0.0,0.0
+CLOUD_ACID,Acid cloud,Creates an rain of acid,Static Projectile,90,0.25s,,,,,,,,,,,,,,,,,8,0.2,0.2,0.4,0.2,0.2,0.5,0.0,0.0,0.0
+CLOUD_THUNDER,Thundercloud,Creates a stormy cloud,Static Projectile,90,0.50s,,,,,,,,,,,,,,,,,5,0.3,0.3,0.2,0.3,0.4,0.5,0.0,0.0,0.0
+ELECTRIC_CHARGE,Electric charge,"Gives a projectile an electric charge, that it will release on impact",Modifier,8,,,,,,,,,,,,,,,,,,,0.0,1.0,1.0,0.0,0.8,0.7,0.0,0.0,0.0
+MATTER_EATER,Matter eater,Makes a projectile eat the environment as it flies,Modifier,120,,,,,,,,,,,,,,,,,,10,0.0,0.1,0.9,0.0,0.1,0.2,0.0,0.0,0.2
+FREEZE,Freeze charge,"Gives a projectile a frozen charge, that it will release on impact",Modifier,10,,,,,,,,,,,,,,,,,,,0.0,1.0,0.0,1.0,0.9,0.8,0.0,0.0,0.0
+HITFX_BURNING_CRITICAL_HIT,Critical on burning,Makes a projectile always do a critical hit on burning enemies,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.4,0.2,0.2,0.0,0.0,0.0
+HITFX_CRITICAL_WATER,Critical on wet (water) enemies,Makes a projectile always do a critical hit on wet (water) enemies,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.2,0.4,0.2,0.0,0.0,0.0
+HITFX_CRITICAL_OIL,Critical on oiled enemies,Makes a projectile always do a critical hit on oiled enemies,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.4,0.2,0.2,0.0,0.0,0.0
+HITFX_CRITICAL_BLOOD,Critical on bloody enemies,Makes a projectile always do a critical hit on bloody enemies,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.2,0.2,0.4,0.0,0.0,0.0
+HITFX_TOXIC_CHARM,Charm on toxic sludge,Makes a projectile charm creatures covered in toxic sludge,Modifier,70,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.2,0.3,0.2,0.0,0.0,0.0
+HITFX_EXPLOSION_SLIME,Explosion on slimy enemies,Makes a projectile explode upon collision with creatures covered in slime,Modifier,20,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.3,0.2,0.2,0.0,0.0,0.0
+HITFX_EXPLOSION_SLIME_GIGA,Giant explosion on slimy enemies,Makes a projectile explode powerfully upon collision with creatures covered in slime,Modifier,200,,,,,,,,,,,,,,,,,,20,0.0,0.1,0.0,0.1,0.3,0.1,0.0,0.0,0.0
+HITFX_EXPLOSION_ALCOHOL,Explosion on drunk enemies,Makes a projectile explode upon collision with creatures covered in alcohol,Modifier,20,,,,,,,,,,,,,,,,,,,0.0,0.3,0.0,0.2,0.2,0.2,0.0,0.0,0.0
+HITFX_EXPLOSION_ALCOHOL_GIGA,Giant explosion on drunk enemies,Makes a projectile explode powerfully upon collision with creatures covered in alcohol,Modifier,200,,,,,,,,,,,,,,,,,,20,0.0,0.1,0.0,0.1,0.1,0.3,0.0,0.0,0.0
+HITFX_PETRIFY,Petrify,Turns a wounded enemy into stone,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.3,0.0,0.2,0.3,0.0,0.0
+ROCKET_DOWNWARDS,Downwards bolt bundle,Makes a projectile separate into a bundle of 5 explosive bolts as soon as it moves downwards,Modifier,90,0.42s,,,,,,,,,,,,,,,,,,0.0,0.2,0.5,0.7,0.7,0.0,0.0,0.0,0.0
+ROCKET_OCTAGON,Octagonal bolt bundle,Makes a projectile launch 8 magical bolts if it moves slowly enough,Modifier,100,0.33s,,,,,,,,,,,,,,,,,,0.0,0.0,0.5,0.6,0.3,0.0,0.0,0.0,0.0
+FIZZLE,Fizzle,Gives a spell a small probability of short-circuiting,Modifier,0,-0.17s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.4,0.3,0.1,0.0,0.0,0.0
+BOUNCE_EXPLOSION,Explosive bounce,Makes a projectile explode as it bounces,Modifier,20,0.42s,,,,,,,,,,,,,,,,20,,0.0,0.0,0.2,0.6,0.8,0.8,0.0,0.0,0.0
+BOUNCE_SPARK,Bubbly bounce,Makes a projectile shoot bubble sparks as it bounces,Modifier,20,0.13s,,,,,,,,,,,,,,,,5,,0.0,0.2,0.6,0.6,0.6,0.0,0.0,0.0,0.0
+BOUNCE_LASER,Concentrated light bounce,Makes a projectile release a bundle of concentrated light as it bounces,Modifier,30,0.20s,,,,,,,,,,,,,,,,5,,0.0,0.0,0.0,0.4,0.8,0.4,0.0,0.0,0.0
+BOUNCE_LASER_EMITTER,Plasma Beam Bounce,A projectile launches a plasma beam upon bouncing,Modifier,40,0.20s,,,,,,,,,,,,,,,,5,,0.0,0.0,0.0,0.4,0.8,0.4,0.0,0.0,0.0
+BOUNCE_LARPA,Larpa Bounce,A projectile will launch a copy of itself when it bounces,Modifier,80,0.53s,,,,,,,,,,,,,,,,10,,0.0,0.0,0.0,0.0,0.4,0.6,0.4,0.0,0.0
+BOUNCE_SMALL_EXPLOSION,Sparkly bounce,Makes a projectile release damaging sparks as it bounces,Modifier,10,0.15s,,,,,,,,,,,,,,,,10,,0.5,0.3,0.3,0.0,0.0,0.0,0.0,0.0,0.0
+BOUNCE_LIGHTNING,Lightning bounce,Makes a projectile release powerful lightning as it bounces,Modifier,40,0.42s,,,,,,,,,,,,,,,,10,,0.0,0.1,0.0,0.3,0.0,0.6,0.0,0.0,0.0
+BOUNCE_HOLE,Vacuum bounce,Makes a projectile remove earth as it bounces,Modifier,60,0.67s,,,,,,,,,,,,,,,,10,20,0.0,0.0,0.1,0.0,0.4,0.0,0.4,0.0,0.1
+FIREBALL_RAY,Fireball thrower,Makes a projectile cast fireballs in random directions,Modifier,110,,,,,,,,,,,,,,,,,,16,0.0,0.6,0.6,0.0,0.4,0.4,0.0,0.0,0.0
+LIGHTNING_RAY,Lightning thrower,Makes a projectile cast lightning in random directions,Modifier,110,,,,,,,,,,,,,,,,,,16,0.0,0.0,0.2,0.4,0.4,0.4,0.0,0.0,0.0
+TENTACLE_RAY,Tentacler,Makes a projectile cast tentacles in random directions,Modifier,110,,,,,,,,,,,,,,,,,,16,0.0,0.1,0.0,0.4,0.4,0.4,0.0,0.0,0.0
+LASER_EMITTER_RAY,Plasma Beam Thrower,A projectile fires plasma beams in all directions!,Modifier,110,,,,,,,,,,,,,,,,,,16,0.0,0.0,0.1,0.4,0.4,0.4,0.0,0.0,0.0
+FIREBALL_RAY_LINE,Two-way fireball thrower,Makes a projectile fire small fireballs perpendicular to its trajectory,Modifier,130,,,,,,,,,,,,,,,,,,20,0.0,0.0,0.6,0.4,0.4,0.4,1.0,0.0,0.0
+FIREBALL_RAY_ENEMY,Personal fireball thrower,Makes a projectile turn the creatures it hits into living fireball throwers,Modifier,90,,,,,,,,,,,,,,,,,,20,0.0,0.5,0.6,0.0,0.4,0.3,0.0,0.0,0.0
+LIGHTNING_RAY_ENEMY,Personal lightning caster,Makes a projectile turn the creatures it hits into living thunderstorms,Modifier,90,,,,,,,,,,,,,,,,,,20,0.0,0.0,0.2,0.4,0.4,0.5,0.0,0.0,0.0
+TENTACLE_RAY_ENEMY,Personal tentacler,Makes creatures hit by a projectile grow tentacles in a chaotic manner,Modifier,90,,,,,,,,,,,,,,,,,,20,0.0,0.0,0.1,0.4,0.5,0.4,0.0,0.0,0.0
+GRAVITY_FIELD_ENEMY,Personal gravity field,Makes creatures hit by a projectile gain a temporary gravity well that draws projectiles in,Modifier,110,,,,,,,,,,,,,,,,,,20,0.0,0.5,0.6,0.0,0.4,0.4,0.0,0.0,0.0
+CURSE,Venomous Curse,Imbues a projectile with a curse that makes the target hit by the projectile to waste away,Modifier,30,,,,,,,,,,,,,,,,,,,0.0,0.0,0.6,0.7,0.0,0.4,0.0,0.0,0.1
+CURSE_WITHER_PROJECTILE,Weakening Curse - Projectiles,Target hit by a projectile takes 25% extra projectile damage for a time,Modifier,50,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.4,0.7,0.7,0.0,0.1
+CURSE_WITHER_EXPLOSION,Weakening Curse - Explosives,Target hit by a projectile takes 25% extra explosion damage for a time,Modifier,50,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.4,0.7,0.7,0.0,0.0,0.1
+CURSE_WITHER_MELEE,Weakening Curse - Melee,Target hit by a projectile takes 25% extra melee damage for a time,Modifier,50,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.4,0.7,0.7,0.0,0.1
+CURSE_WITHER_ELECTRICITY,Weakening Curse - Electricity,Target hit by a projectile takes 25% extra electricity damage for a time,Modifier,50,,,,,,,,,,,,,,,,,,,0.0,0.2,0.0,0.0,0.4,0.7,0.7,0.0,0.1
+ORBIT_DISCS,Sawblade Orbit,Makes four sawblades rotate around a projectile,Modifier,70,,,,,,,,,,,,,,,,,,,0.0,0.3,0.65,0.0,0.4,0.3,0.0,0.0,0.0
+ORBIT_FIREBALLS,Fireball Orbit,Makes four fireballs rotate around a projectile,Modifier,40,,,,,,,,,,,,,,,,,,,0.2,0.3,0.7,0.0,0.4,0.2,0.0,0.0,0.0
+ORBIT_NUKES,Nuke Orbit,Makes four… nukes(?!) rotate around a projectile,Modifier,250,,,,,,,,,,,,,,,,,,3,0.0,0.0,0.1,0.0,0.2,0.1,0.2,0.0,1.0
+ORBIT_LASERS,Plasma Beam Orbit,Makes four plasma beams rotate around a projectile,Modifier,100,,,,,,,,,,,,,,,,,,,0.0,0.2,0.7,0.0,0.4,0.3,0.0,0.0,0.2
+ORBIT_LARPA,Orbit Larpa,Makes four copies of a projectile rotate around it,Modifier,90,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.2,0.0,0.8,0.0,0.2
+CHAIN_SHOT,Chain Spell,"Causes a projectile to cast a copy of itself upon expiring, up to 5 times",Modifier,70,,-5,,,,,,,,,,,,,10,,,,0.0,0.0,0.4,0.0,0.6,0.8,0.0,0.0,0.0
+ARC_ELECTRIC,Electric Arc,Creates arcs of lightning between projectiles (requires 2 projectile spells),Modifier,15,,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.4,0.4,0.4,0.8,0.0,0.0
+ARC_FIRE,Fire Arc,Creates arcs of fire between projectiles (requires 2 projectile spells),Modifier,15,,,,,,,,,,,,,,,,,,,0.0,0.4,0.2,0.2,0.5,0.2,0.0,0.0,0.0
+ARC_GUNPOWDER,Gunpowder Arc,Creates arcs of gunpowder between projectiles (requires 2 projectile spells),Modifier,15,,,,,,,,,,,,,,,,,,,0.0,0.4,0.4,0.2,0.4,0.2,0.0,0.0,0.0
+ARC_POISON,Poison Arc,Creates arcs of poison between projectiles (requires 2 projectile spells),Modifier,15,,,,,,,,,,,,,,,,,,,0.0,0.4,0.2,0.4,0.2,0.4,0.0,0.0,0.0
+CRUMBLING_EARTH_PROJECTILE,Earthquake shot,Makes a projectile crumble the earth it hits,Modifier,45,,,,,,,,,,,,,,,,,,15,0.0,0.2,0.3,0.4,0.4,0.3,0.0,0.0,0.0
+X_RAY,All-seeing eye,See into the unexplored. But not everywhere...,Utility,100,,,,,,,,0.25,,,,,,,,,,10,0.8,1.0,1.0,0.7,0.5,0.3,0.2,0.0,0.0
+UNSTABLE_GUNPOWDER,Firecrackers,Makes a projectile release firecrackers when it disappears,Modifier,15,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.4,0.4,0.0,0.0,0.0,0.0
+ACID_TRAIL,Acid trail,Gives a projectile a trail of acid,Modifier,15,,,,,,,,,,,,,,,,,,,0.0,0.3,0.2,0.3,0.3,0.4,0.0,0.0,0.0
+POISON_TRAIL,Poison trail,Gives a projectile a trail of poison,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+OIL_TRAIL,Oil trail,Gives a projectile a trail of oil,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+WATER_TRAIL,Water trail,Gives a projectile a trail of water,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.3,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+GUNPOWDER_TRAIL,Gunpowder trail,Gives a projectile a trail of gunpowder,Modifier,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.3,0.0,0.0,0.0,0.0
+FIRE_TRAIL,Fire trail,Gives a projectile a trail of fiery particles,Modifier,10,,,,,,,,,,,,,,,,,,,0.4,0.5,0.3,0.3,0.2,0.0,0.0,0.0,0.0
+BURN_TRAIL,Burning trail,Gives a projectile a tail of fire,Modifier,5,,,,,,,,,,,,,,,,,,,0.4,0.3,0.3,0.0,0.0,0.0,0.0,0.0,0.0
+TORCH,Torch,Lights your wand right up!,Passive,0,,,,,,,,,,,,,,,,,,,1.0,0.6,0.5,0.0,0.0,0.0,0.0,0.0,0.0
+TORCH_ELECTRIC,Electric Torch,Gives your wand a bright but very dangerous light!,Passive,0,,,,,,,,,,,,,,,,,,,0.8,0.6,0.4,0.0,0.0,0.0,0.0,0.0,0.0
+ENERGY_SHIELD,Energy shield,Deflects incoming projectiles,Passive,,,,,,,,,,,,,,,,,,,,0.0,0.05,0.4,0.8,0.4,0.4,0.6,0.0,0.0
+ENERGY_SHIELD_SECTOR,Energy shield sector,Deflects incoming projectiles,Passive,,,,,,,,,,,,,,,,,,,,0.1,0.5,0.6,0.8,0.5,0.4,0.0,0.0,0.0
+ENERGY_SHIELD_SHOT,Projectile energy shield,Gives a projectile a shield that deflects other projectiles,Modifier,5,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.3,0.5,0.4,0.3,0.0,0.0
+TINY_GHOST,Summon Tiny Ghost,Summons a tiny ethereal being to your help. It may cast stronger spells depending on how much damage you have suffered.,Passive,0,,,,,,,,,,,,,,,,,,,0.0,0.1,0.5,1.0,0.8,0.7,0.5,0.0,0.0
+OCARINA_A,Ocarina - note A,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_B,Ocarina - note B,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_C,Ocarina - note C,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_D,Ocarina - note D,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_E,Ocarina - note E,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_F,Ocarina - note F,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_GSHARP,Ocarina - note G#,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+OCARINA_A2,Ocarina - note A2,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+KANTELE_A,Kantele - note A,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+KANTELE_D,Kantele - note D,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+KANTELE_DIS,Kantele - note D#,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+KANTELE_E,Kantele - note E,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+KANTELE_G,Kantele - note G,Music for your ears!,Other,1,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+RANDOM_SPELL,Random spell,"Casts a spell, any spell, at random!",Other,5,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.3,0.2,0.1,0.0,0.5
+RANDOM_PROJECTILE,Random projectile spell,Casts one random projectile spell,Projectile,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.4,0.1,0.2,0.0,0.5
+RANDOM_MODIFIER,Random modifier spell,Casts one random modifier spell,Modifier,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.3,0.2,0.1,0.0,0.5
+RANDOM_STATIC_PROJECTILE,Random static projectile spell,Casts one random static projectile spell,Static Projectile,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.0,0.1,0.2,0.0,0.5
+DRAW_RANDOM,Copy random spell,Casts a random spell among the spells in your wand,Other,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.3,0.2,0.2,0.1,0.1,0.0,1.0
+DRAW_RANDOM_X3,Copy random spell thrice,Casts a random spell among the spells in your wand three times!,Other,50,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.1,0.3,0.1,0.1,0.0,1.0
+DRAW_3_RANDOM,Copy three random spells,Casts three random spells among the spells in your wand,Other,40,,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.2,0.0,0.1,0.1,0.0,1.0
+ALL_NUKES,Spells to nukes,"Transforms every projectile currently in the air into a nuke, not a good idea",Utility,600,1.67s,,,,,,,,,,,,,1.67s,,,,2,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,1.0
+ALL_DISCS,Spells to giga sawblades,Transforms every projectile currently in the air into a giant sawblade,Utility,100,0.83s,,,,,,,,,,,,,0.83s,,,,,0.1,0.0,0.0,0.0,0.0,0.0,0.05,0.0,1.0
+ALL_ROCKETS,Spells to magic missiles,Transforms every projectile currently in the air into a magic missile,Utility,100,0.83s,,,,,,,,,,,,,0.83s,,,,10,0.0,0.1,0.0,0.0,0.0,0.0,0.05,0.0,1.0
+ALL_DEATHCROSSES,Spells to death crosses,Transforms every projectile currently in the air into a death cross,Utility,80,0.67s,,,,,,,,,,,,,0.67s,,,,15,0.0,0.0,0.1,0.0,0.0,0.0,0.05,0.0,1.0
+ALL_BLACKHOLES,Spells to black holes,Transforms every projectile currently in the air into a black hole,Utility,200,1.67s,,,,,,,,,,,,,1.67s,,,,10,0.0,0.0,0.0,0.1,0.0,0.0,0.05,0.0,1.0
+ALL_ACID,Spells to acid,Transforms every projectile currently in the air into a pool of acid,Utility,200,1.67s,,,,,,,,,,,,,1.67s,,,,,0.0,0.0,0.0,0.0,0.1,0.0,0.05,0.0,1.0
+ALL_SPELLS,The end of everything,You're heavily advised not to cast this spell.,Other,600,1.67s,,,,,,,,,,,,,1.67s,,,,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+SUMMON_PORTAL,Summon portal,Summons a strange portal,Other,50,1.33s,,,,,,,,,,,,,,,,,7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+ADD_TRIGGER,Add trigger,Makes a projectile cast another spell upon collision,Other,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.3,0.6,0.6,0.0,0.0,1.0
+ADD_TIMER,Add timer,Makes a projectile cast another spell after a short time,Other,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.3,0.6,0.6,0.0,0.0,1.0
+ADD_DEATH_TRIGGER,Add expiration trigger,Makes a projectile cast another spell upon expiring,Other,20,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.3,0.6,0.6,0.0,0.0,1.0
+LARPA_CHAOS,Chaos larpa,Makes a projectile cast copies of itself in random directions,Modifier,100,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.2,0.3,0.4,0.0,0.0,0.2
+LARPA_DOWNWARDS,Downwards larpa,Makes a projectile cast copies of itself with a downwards trajectory,Modifier,120,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.3,0.4,0.2,0.0,0.0,0.2
+LARPA_UPWARDS,Upwards larpa,Makes a projectile cast copies of itself with an upwards trajectory,Modifier,120,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.1,0.2,0.4,0.0,0.0,0.2
+LARPA_CHAOS_2,Copy trail,Makes a projectile leave a trail of copies of itself,Modifier,150,0.33s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.1,0.0,0.4,0.0,0.0,0.1
+LARPA_DEATH,Larpa Explosion,A projectile will shoot out 8 copies of itself when it expires or hits the ground,Modifier,90,0.25s,,,,,,,,,,,,,,,,,30,0.0,0.0,0.1,0.1,0.3,0.4,0.0,0.0,0.2
+ALPHA,Alpha,Casts a copy of the first spell in your wand,Other,40,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
+GAMMA,Gamma,Casts a copy of the last spell in your wand,Other,40,0.25s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
+TAU,Tau,Copies the two following spells in the wand when cast,Other,90,0.58s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
+OMEGA,Omega,Casts copies of every spell in your wand,Other,320,0.83s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.0,1.0
+MU,Mu,Every modifier-type spell in the current wand is applied to a projectile,Other,120,0.83s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
+PHI,Phi,Casts a copy of every projectile-type spell in the current wand,Other,120,0.83s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
+SIGMA,Sigma,Copies every static projectile -type spell in the wand when cast,Other,120,0.50s,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.1,0.2,0.0,0.0,1.0
+ZETA,Zeta,Copies a random spell in another wand you're holding,Other,10,,,,,,,,,,,,,,,,,,,0.0,0.0,0.2,0.0,0.0,0.4,0.0,0.0,0.5
+DIVIDE_2,Divide by 2,"Casts the next spell twice, but with reduced damage",Other,35,0.33s,-5,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.2,0.0,0.3,0.2,0.0,1.0
+DIVIDE_3,Divide by 3,"Casts the next spell 3 times, but with reduced damage",Other,50,0.58s,-10,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.1,0.1,0.2,0.0,1.0
+DIVIDE_4,Divide by 4,"Casts the next spell 4 times, but with reduced damage",Other,70,0.83s,-15,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.1,0.1,0.0,1.0
+DIVIDE_10,Divide by 10,"Casts the next spell 10 times, but with reduced damage",Other,200,1.33s,-38,,,,,,,,,,,,0.33s,,,,5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+METEOR_RAIN,Meteorisade,Alea iacta est,Static Projectile,225,1.67s,,,,,,,,,,,,,1.00s,,,,2,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,1.0
+WORM_RAIN,Matosade,Alea iacta est,Static Projectile,225,1.67s,,,,,,,,,,,,,1.00s,,,,2,0.0,0.0,0.0,0.0,0.0,0.0,0.1,0.0,1.0
+RESET,Wand Refresh,Reloads the wand immediately,Utility,20,,,,,,,,,,,,,,-0.42s,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IF_ENEMY,Requirement - Enemies,The next spell is skipped if there are less than 15 enemies nearby,Other,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IF_PROJECTILE,Requirement - Projectile Spells,The next spell is skipped if there are less than 20 projectiles nearby,Other,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IF_HP,Requirement - Low Health,The next spell is skipped if you have more than 25% health left,Other,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IF_HALF,Requirement - Every Other,The next spell is skipped every other time this spell is cast,Other,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IF_END,Requirement - Endpoint,Any Requirement spells before this will skip all spells between them and this spell,Other,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IF_ELSE,Requirement - Otherwise,"If a Requirement spell before this succeeds, the next spell is skipped",Other,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+COLOUR_RED,Red Glimmer,Gives a projectile a red sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.2,0.2,0.4,0.2,0.2,0.2,0.0,0.0
+COLOUR_ORANGE,Orange Glimmer,Gives a projectile a orange sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.1,0.4,0.0,0.0,0.0,0.0
+COLOUR_GREEN,Green Glimmer,Gives a projectile a green sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.1,0.1,0.0,0.0,0.0,0.0
+COLOUR_YELLOW,Yellow Glimmer,Gives a projectile a yellow sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.4,0.1,0.0,0.0,0.0,0.0
+COLOUR_PURPLE,Purple Glimmer,Gives a projectile a purple sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.1,0.4,0.0,0.0,0.0,0.0
+COLOUR_BLUE,Blue Glimmer,Gives a projectile a blue sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.4,0.1,0.1,0.0,0.0,0.0,0.0
+COLOUR_RAINBOW,Rainbow Glimmer,Gives a projectile a randomly colored sparkly trail,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.1,0.1,0.0,0.0,0.0,0.2
+COLOUR_INVIS,Invisible Spell,Turns a projectile invisible,Modifier,0,-0.13s,,,,,,,,,,,,,,,,,,0.0,0.0,0.1,0.1,0.1,0.0,0.0,0.0,0.1
+RAINBOW_TRAIL,Rainbow trail,Gives a projectile a trail of rainbow,Modifier,0,,,,,,,,,,,,,,,,,,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+CESSATION,Cessation,The caster enters the realm of no realm,Other,0,10.00s,,,,,,,,,,,,,10.00s,,,,25,0.0,0.0,0.0,0.0,0.0,0.1,0.2,0.0,1.0
