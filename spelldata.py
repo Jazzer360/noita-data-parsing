@@ -12,7 +12,7 @@ def get_spell_texts():
 
 def build_spellbook():
     book = []
-    with open('scripts/gun/gun_actions.lua', 'r') as f:
+    with open('data/scripts/gun/gun_actions.lua', 'r') as f:
         while True:
             line = f.readline()
             if '--[[' in line:
@@ -162,7 +162,7 @@ def parse_xml(filename):
     if filename:
         if filename[0].endswith('/'):
             return spell
-        with open('../' + filename[0], 'r') as f:
+        with open(filename[0], 'r') as f:
             soup = BeautifulSoup(f, 'lxml-xml')
             proj = soup.find('ProjectileComponent')
             expl = soup.find('config_explosion')
@@ -179,7 +179,7 @@ def parse_xml(filename):
             if expl and expl.has_attr('damage') and float(expl.get('damage')) > 0:
                 spell['explosion'] = float(expl['damage'])*25
             if (expl and expl.has_attr('explosion_radius')
-                     and float(expl.get('explosion_radius')) > 0):
+                    and float(expl.get('explosion_radius')) > 0):
                 spell['radius'] = int(expl['explosion_radius'])
 
             # Velocity parsing
@@ -194,7 +194,7 @@ def parse_xml(filename):
                 if life:
                     try:
                         variance = int(proj.get('lifetime_randomness'))
-                    except:
+                    except TypeError:
                         variance = 0
                     spell['lifetime_min'] = int(life) - variance
                     spell['lifetime_max'] = int(life) + variance
