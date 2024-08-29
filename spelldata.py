@@ -29,6 +29,7 @@ def build_spellbook():
                     lines.append(re.sub(r'\s+', '', nextline))
             elif line == '':
                 break
+    add_derived_stats(book)
     return book
 
 
@@ -69,7 +70,7 @@ def parse_lua_actions(actionblock, spell):
             timer = re.search(
                 r'(add_projectile_trigger_timer\([^,]*,)([0-9]+)', line)
             if timer:
-                spell['trigger_time'] = timer.group(2)
+                spell['trigger_time'] = int(timer.group(2))
             continue
         
         # Cast delay parsing
@@ -78,9 +79,9 @@ def parse_lua_actions(actionblock, spell):
         if fire_rate:
             fire_rate = fire_rate.group(1)
             if fire_rate.startswith('='):
-                spell['cast_delay'] = f'\'={float(fire_rate[1:]):.2f}'
+                spell['cast_delay'] = f'\'={float(fire_rate[1:]) / 60:.2f} s'
             else:
-                spell['cast_delay'] = f'{float(fire_rate)/60:.2f}'
+                spell['cast_delay'] = float(fire_rate) / 60
             continue
 
         # Recharge time parsing
@@ -91,9 +92,9 @@ def parse_lua_actions(actionblock, spell):
         if recharge:
             recharge = recharge.group(1)
             if recharge.startswith('='):
-                spell['recharge'] = f'\'={float(recharge[1:])/60:.2f}'
+                spell['recharge'] = f'\'={float(recharge[1:]) / 60:.2f} s'
             else:
-                spell['recharge'] = f'{float(recharge)/60:.2f}'
+                spell['recharge'] = float(recharge) / 60
             continue
         
         # Spread parsing
@@ -101,7 +102,7 @@ def parse_lua_actions(actionblock, spell):
             r'(?<=c\.spread_degrees)([=+-]{1}[\.0-9]+)', line)
         if spread:
             spread = spread.group(1)
-            spell['spread'] = f'{float(spread):.2f}'
+            spell['spread'] = float(spread)
             continue
         
         # Crit parsing
@@ -112,7 +113,7 @@ def parse_lua_actions(actionblock, spell):
             if crit.startswith('='):
                 spell['crit'] = f'\'{crit}%'
             else:
-                spell['crit'] = f'{float(crit):.0f}%'
+                spell['crit'] = f'{float(crit):.2f}%'
             continue
 
         # Recoil parsing
@@ -123,7 +124,7 @@ def parse_lua_actions(actionblock, spell):
             if recoil.startswith('='):
                 spell['recoil'] = f'\'={float(recoil[1:]):.0f}'
             else:
-                spell['recoil'] = f'{float(recoil):.0f}'
+                spell['recoil'] = float(recoil)
             continue
 
         # Damage modifiers
@@ -137,13 +138,13 @@ def parse_lua_actions(actionblock, spell):
             if dmgmod.startswith('='):
                 spell['damage'] = f'\'={float(dmgmod[1:])*25:.0f)}'
             else:
-                spell['damage'] = f'{float(dmgmod)*25:+.0f}'
+                spell['damage'] = float(dmgmod)*25
 
         # Draw amount
         draw = re.search(r'(?<=draw_actions\()([0-9]+)', line)
         if draw:
             draw = draw.group(1)
-            spell['draw'] = draw
+            spell['draw'] = int(draw)
 
         # Lifetime modifier
         life = re.search(r'(?<=lifetime_add)([=+-]{1}[\.0-9]+)', line)
@@ -171,7 +172,8 @@ def parse_xml(filename, spell):
             typedmg = soup.find('damage_by_type')
             if typedmg:
                 for dtype, dmg in typedmg.attrs.items():
-                    spell[dtype] = float(dmg)*25
+                    if float(dmg) > 0:
+                        spell[dtype] = float(dmg)*25
 
             # Explosion parsing
             if (expl and expl.has_attr('damage')
@@ -180,6 +182,8 @@ def parse_xml(filename, spell):
             if (expl and expl.has_attr('explosion_radius')
                     and float(expl.get('explosion_radius')) > 0):
                 spell['radius'] = int(expl['explosion_radius'])
+            if spell['name'] == 'Lightning bolt':
+                spell['explosion'] = 125.0
 
             # Velocity parsing
             if proj and proj.has_attr('speed_min'):
@@ -200,7 +204,13 @@ def parse_xml(filename, spell):
 
             # Friendly fire
             if proj:
-                ff = True if proj.get('friendly_fire') == '1' else False
+                ff = False
+                if proj.get('friendly_fire') == '1':
+                    if (proj.has_attr('damage')
+                            and float(proj.get('damage')) > 0):
+                        ff = True
+                    elif soup.find('damage_by_type'):
+                        ff = True
                 if 'explosion' in spell:
                     if proj.get('explosion_dont_damage_shooter') != '1':
                         ff = True
@@ -221,6 +231,9 @@ def parse_xml(filename, spell):
                         spell['bounces'] = proj.get('bounces_left')
                         spell['bounce_magnitude'] = proj.get('bounce_energy')
 
+            # Velocity scaling
+
+
 
 def add_derived_stats(book):
     total_weights = [0.0 for _ in range(9)]
@@ -235,56 +248,14 @@ def add_derived_stats(book):
             spell[f't{out}'] = f'{prob:.2f}%' if prob > 0 else None
 
 
-def make_csv(book):
-    keys = ['id',
-            'name',
-            'description',
-            'type',
-            'charges',
-            'mana',
-            'draw',
-            'cast_delay',
-            'recharge',
-            'spread',
-            'recoil',
-            'crit',
-            'damage',
-            'lifetime_mod',
-            'lifetime_min',
-            'lifetime_max',
-            'bounces',
-            'bounce_magnitude',
-            'speed_min',
-            'speed_max',
-            'death_speed',
-            'trigger_time',
-            'dangerous',
-            'projectile',
-            'slice',
-            'fire',
-            'holy',
-            'electricity',
-            'drill',
-            'melee',
-            'healing',
-            'ice',
-            'explosion',
-            'radius',
-            't0',
-            't1',
-            't2',
-            't3',
-            't4',
-            't5',
-            't6',
-            't7',
-            't10']
-    with open('spells.csv', mode='w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(keys)
-        for spell in book:
-            row = [spell.get(key) for key in keys]
-            writer.writerow(row)
+def make_table():
+    book = build_spellbook()
+    table = [[spell.get(key) for key in keys] for spell in book]
+    table.insert(0, keys)
+    for spell in table[1:]:
+        hyper = '=HYPERLINK("https://noita.wiki.gg/wiki/{}", "{}")'
+        spell[1] = hyper.format(spell[1].title().replace(" ", "_"), spell[1])
+    return table
 
 
 def find_spells(book, attrs=None, name=None):
@@ -300,13 +271,46 @@ def find_spells(book, attrs=None, name=None):
 
 
 texts = get_spell_texts()
-book = build_spellbook()
-
-# print_book(book)
-add_derived_stats(book)
-make_csv(book)
-find_spells(book, name='lightning')
-
-
-# Do spell rarity! Add total spawn chance per tier. Figure out the logic behind
-# overall spell rarity
+keys = ['id',
+        'name',
+        'description',
+        'type',
+        'charges',
+        'mana',
+        'draw',
+        'cast_delay',
+        'recharge',
+        'spread',
+        'recoil',
+        'crit',
+        'damage',
+        'lifetime_mod',
+        'lifetime_min',
+        'lifetime_max',
+        'bounces',
+        'bounce_magnitude',
+        'speed_min',
+        'speed_max',
+        'death_speed',
+        'trigger_time',
+        'dangerous',
+        'projectile',
+        'slice',
+        'fire',
+        'holy',
+        'electricity',
+        'drill',
+        'melee',
+        'healing',
+        'ice',
+        'explosion',
+        'radius',
+        't0',
+        't1',
+        't2',
+        't3',
+        't4',
+        't5',
+        't6',
+        't7',
+        't10']
