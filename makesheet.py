@@ -2,8 +2,11 @@ import re
 import spelldata
 import gspread
 from gspread.utils import rowcol_to_a1 as rc
-from gspread_formatting import get_conditional_format_rules as cnd_fmt
-from gspread_formatting import set_column_widths
+from gspread_formatting import (get_conditional_format_rules,
+                                set_column_widths, ConditionalFormatRule,
+                                BooleanRule, GradientRule, BooleanCondition,
+                                CellFormat, GridRange, InterpolationPoint,
+                                Color)
 
 
 def num_format(pattern):
@@ -19,7 +22,7 @@ def build_formats():
     formats = []
     for col, fmt in col_formats.items():
         formats.append({
-            'range': get_range(col),
+            'range': get_col_range(col),
             'format': fmt
         })
     return formats
@@ -48,7 +51,7 @@ def format_data():
 
 
 def set_widths():
-    ranges = [(get_col_a1(col), width) for col, width in col_widths.items()]
+    ranges = [(get_col_alpha(col), width) for col, width in col_widths.items()]
     set_column_widths(sheet, ranges)
 
 
@@ -70,24 +73,67 @@ def create_header(title, beg, end):
 def create_headers():
     create_header('Cast group modifiers', 'cast_delay', 'damage')
     create_header('Projectile attributes', 'lifetime_mod', 'dangerous')
-    create_header('Damage types', 'projectile', 'explosion')
+    create_header('Damage types', 'projectile', 'healing')
     create_header('Spawn chances', 't0', 't10')
 
 
 def add_borders():
-    border_cols = ['draw', 'damage', 'dangerous', 'explosion', 'radius', 't6']
-    ranges = [get_range(cname, 0) for cname in border_cols]
+    border_cols = ['draw', 'damage', 'dangerous', 'healing', 'radius', 't6']
+    ranges = [get_col_range(cname, 0) for cname in border_cols]
     sheet.format(ranges, border_format)
 
 
-def get_range(colname, offset=2):
+def add_conditional_format():
+    rules = get_conditional_format_rules(sheet)
+    for rule in conditionals:
+        rules.append(rule)
+    rules.save()
+
+
+def make_boolean_rule(ranges, condition, color, criteria=[]):
+    return ConditionalFormatRule(
+        ranges=[GridRange(sheet.id, *ranges)],
+        booleanRule=BooleanRule(
+            condition=BooleanCondition(condition, criteria),
+            format=CellFormat(backgroundColor=Color.fromHex(color))
+            )
+        )
+
+
+def make_gradient_rule(ranges, min, mid, max):
+    minpt = InterpolationPoint(
+        Color.fromHex(min[2]), type=min[0], value=min[1])
+    midpt = None
+    if mid:
+        midpt = InterpolationPoint(
+            Color.fromHex(mid[2]), type=mid[0], value=mid[1])
+    maxpt = InterpolationPoint(
+        Color.fromHex(max[2]), type=max[0], value=max[1])
+    return ConditionalFormatRule(
+        ranges=[GridRange(sheet.id, *ranges)],
+        gradientRule=GradientRule(minpt, maxpt, midpt))
+
+
+def get_col_range(colname, offset=2):
     col = spelldata.keys.index(colname) + 1
     a1 = f'{rc(1 + offset, col)}:{rc(len(spell_data) + 1, col)}'
     return a1
 
 
-def get_col_a1(label):
-    return re.search(r'([A-Z]+)(?=)', get_range(label)).group(1)
+def get_col_alpha(label):
+    return re.search(r'([A-Z]+)(?=)', get_col_range(label)).group(1)
+
+
+def get_range(colfrom, colto=None, offset=2):
+    colto = colto or colfrom
+    fromi = spelldata.keys.index(colfrom)
+    toi = spelldata.keys.index(colto) + 1
+    return [offset, rows, fromi, toi]
+
+
+def sort():
+    sheet.sort((spelldata.keys.index('name') + 1, 'asc'))
+    sheet.sort((spelldata.keys.index('type') + 1, 'asc'))
 
 
 spell_data = spelldata.make_table()
@@ -166,16 +212,16 @@ col_widths = {
     'healing':          50,        
     'ice':              50,    
     'explosion':        50,            
-    'radius':           50,        
-    't0':               50,    
-    't1':               50,    
-    't2':               50,    
-    't3':               50,    
-    't4':               50,    
-    't5':               50,    
-    't6':               50,    
-    't7':               50,    
-    't10':              50,      
+    'radius':           45,        
+    't0':               45,    
+    't1':               45,    
+    't2':               45,    
+    't3':               45,    
+    't4':               45,    
+    't5':               45,    
+    't6':               45,    
+    't7':               45,    
+    't10':              45,      
 }
 
 border_format = {
@@ -186,6 +232,95 @@ border_format = {
     }
 }
 
+# Colors
+red = '#E67C73'
+lt_red = '#EA9999'
+orange = '#FFD666'
+lt_orange = '#F9CB9C'
+yellow = '#FFFF00'
+lt_yellow = '#FFE599'
+green = '#57BB8A'
+lt_green = '#B6D7A8'
+lt_cyan = '#A2C4C9'
+blue = '#C9DAF8'
+lt_blue = '#9FC5E8'
+lt_purple = '#B4A7D6'
+lt_magenta = '#D5A6BD'
+white = '#FFFFFF'
+lt_gray = '#EFEFEF'
+gray = '#CCCCCC'
+
+conditionals = [
+    make_gradient_rule(
+        get_range('cast_delay'),
+        ('MIN', None, green),
+        ('NUMBER', '0', white),
+        ('NUMBER', '2', red)),
+    make_boolean_rule(
+        get_range('cast_delay'), 'TEXT_STARTS_WITH', blue, ['=']),
+    make_gradient_rule(
+        get_range('recharge'),
+        ('MIN', None, green),
+        ('NUMBER', '0', white),
+        ('NUMBER', '2', red)),
+    make_boolean_rule(
+        get_range('recharge'), 'TEXT_STARTS_WITH', blue, ['=']),
+    make_gradient_rule(
+        get_range('spread'),
+        ('PERCENTILE', '5', green),
+        ('NUMBER', '0', white),
+        ('PERCENTILE', '90', red)),
+    make_gradient_rule(
+        get_range('recoil'),
+        ('NUMBER', '-100', green),
+        ('NUMBER', '0', white),
+        ('NUMBER', '100', red)),
+    make_boolean_rule(
+        get_range('recoil'), 'TEXT_STARTS_WITH', blue, ['=']),
+    make_gradient_rule(
+        get_range('crit'),
+        ('MIN', None, white),
+        None,
+        ('MAX', '100', green)),
+    make_gradient_rule(
+        get_range('damage'),
+        ('MIN', None, red),
+        ('NUMBER', '0', white),
+        ('MAX', None, green)),
+    make_boolean_rule(
+        get_range('dangerous'), 'NOT_BLANK', yellow),
+    make_boolean_rule(
+        get_range('projectile', offset=1), 'NOT_BLANK', lt_gray),
+    make_boolean_rule(
+        get_range('slice', offset=1), 'NOT_BLANK', gray),
+    make_boolean_rule(
+        get_range('explosion', offset=1), 'NOT_BLANK', lt_red),
+    make_boolean_rule(
+        get_range('fire', offset=1), 'NOT_BLANK', lt_orange),
+    make_boolean_rule(
+        get_range('ice', offset=1), 'NOT_BLANK', lt_blue),
+    make_boolean_rule(
+        get_range('electricity', offset=1), 'NOT_BLANK', lt_cyan),
+    make_boolean_rule(
+        get_range('holy', offset=1), 'NOT_BLANK', lt_yellow),
+    make_boolean_rule(
+        get_range('drill', offset=1), 'NOT_BLANK', lt_magenta),
+    make_boolean_rule(
+        get_range('melee', offset=1), 'NOT_BLANK', lt_purple),
+    make_boolean_rule(
+        get_range('healing', offset=1), 'NOT_BLANK', lt_green),
+    make_gradient_rule(
+        get_range('t0', 't6'),
+        ('PERCENTILE', '2', red),
+        ('PERCENTILE', '50', orange),
+        ('PERCENTILE', '98', green)),
+    make_gradient_rule(
+        get_range('t0', 't10'),
+        ('MIN', None, red),
+        ('PERCENTILE', '50', orange),
+        ('MAX', None, green))
+]
+
 
 def main():
     setup_filter()
@@ -193,6 +328,8 @@ def main():
     set_widths()
     add_borders()
     create_headers()
+    add_conditional_format()
+    sort()
 
 
 if __name__ == '__main__':

@@ -253,8 +253,16 @@ def make_table():
     table = [[spell.get(key) for key in keys] for spell in book]
     table.insert(0, keys)
     for spell in table[1:]:
-        hyper = '=HYPERLINK("https://noita.wiki.gg/wiki/{}", "{}")'
-        spell[1] = hyper.format(spell[1].title().replace(" ", "_"), spell[1])
+        url = '=HYPERLINK("https://noita.wiki.gg/wiki/{}", "{}")'
+        if spell[1] in ['Water', 'Oil', 'Blood', 'Acid', 'Cement']:
+            link_name = spell[1].title() + "_(Spell)"
+        elif 'Kantele' in spell[1] or 'Ocarina' in spell[1]:
+            link_name = 'Note_spells'
+        elif spell[1] == '???':
+            link_name = '%3F%3F%3F_(Spell)'
+        else:
+            link_name = spell[1].title().replace(" ", "_").replace("?", "%3F")
+        spell[1] = url.format(link_name, spell[1])
     return table
 
 
@@ -296,14 +304,14 @@ keys = ['id',
         'dangerous',
         'projectile',
         'slice',
+        'explosion',
         'fire',
-        'holy',
+        'ice',
         'electricity',
+        'holy',
         'drill',
         'melee',
         'healing',
-        'ice',
-        'explosion',
         'radius',
         't0',
         't1',
