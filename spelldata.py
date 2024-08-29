@@ -67,7 +67,8 @@ def parse_lua_actions(actionblock):
         if line.startswith('add_projectile'):
             spell = spell | parse_xml(re.findall(r'(?<=")([^"]+)(?=")', line))
             # Timer trigger duration
-            timer = re.search(r'(add_projectile_trigger_timer\([^,]*,)([0-9]+)', line)
+            timer = re.search(
+                r'(add_projectile_trigger_timer\([^,]*,)([0-9]+)', line)
             if timer:
                 spell['trigger_time'] = timer.group(2)
             continue
@@ -168,7 +169,8 @@ def parse_xml(filename):
             expl = soup.find('config_explosion')
 
             # Damage parsing
-            if proj and proj.has_attr('damage') and float(proj.get('damage')) > 0:
+            if (proj and proj.has_attr('damage')
+                    and float(proj.get('damage')) > 0):
                 spell['projectile'] = float(proj['damage'])*25
             typedmg = soup.find('damage_by_type')
             if typedmg:
@@ -176,7 +178,8 @@ def parse_xml(filename):
                     spell[dtype] = float(dmg)*25
 
             # Explosion parsing
-            if expl and expl.has_attr('damage') and float(expl.get('damage')) > 0:
+            if (expl and expl.has_attr('damage')
+                    and float(expl.get('damage')) > 0):
                 spell['explosion'] = float(expl['damage'])*25
             if (expl and expl.has_attr('explosion_radius')
                     and float(expl.get('explosion_radius')) > 0):
@@ -208,11 +211,11 @@ def parse_xml(filename):
                 if ff:
                     spell['dangerous'] = 'Yes'
 
-
             # Death velocity
             if proj:
                 if proj.has_attr('die_on_low_velocity_limit'):
-                    spell['death_speed'] = proj.get('die_on_low_velocity_limit')
+                    spell['death_speed'] = proj.get(
+                        'die_on_low_velocity_limit')
 
             # Bounces
             if proj:
@@ -233,7 +236,8 @@ def add_derived_stats(book):
     for spell in book:
         for n in range(9):
             out = n if n < 8 else 10
-            prob = float(spell['spawn_probability'][n]) / total_weights[n] * 100
+            prob = (float(spell['spawn_probability'][n])
+                    / total_weights[n] * 100)
             spell[f't{out}'] = f'{prob:.2f}%' if prob > 0 else None
 
 
@@ -354,5 +358,5 @@ make_csv(book)
 find_spells(book, attrs=['dangerous'], name='lightning')
 
 
-
-# Do spell rarity! Add total spawn chance per tier. Figure out the logic behind overall spell rarity
+# Do spell rarity! Add total spawn chance per tier. Figure out the logic behind
+# overall spell rarity
