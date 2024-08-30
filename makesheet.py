@@ -71,14 +71,15 @@ def create_header(title, beg, end):
 
 
 def create_headers():
-    create_header('Cast group modifiers', 'cast_delay', 'damage')
-    create_header('Projectile attributes', 'lifetime_mod', 'dangerous')
+    create_header('Cast group modifiers', 'cast_delay', 'lifetime_mod')
+    create_header('Projectile attributes', 'lifetime_min', 'dangerous')
     create_header('Damage types', 'projectile', 'healing')
     create_header('Spawn chances', 't0', 't10')
 
 
 def add_borders():
-    border_cols = ['draw', 'damage', 'dangerous', 'healing', 'radius', 't6']
+    border_cols = ['draw', 'lifetime_mod', 'dangerous', 'healing', 'radius',
+                   't6']
     ranges = [get_col_range(cname, 0) for cname in border_cols]
     sheet.format(ranges, border_format)
 
@@ -165,6 +166,7 @@ col_formats = {
     'recoil': num_pos_fmt,
     'crit': pct_fmt,
     'damage': num_1_pos_fmt,
+    'speed_mod': pct_fmt,
     'lifetime_mod': num_pos_fmt,
     'bounce_magnitude': pct_fmt,
     'projectile': num_1_fmt,
@@ -180,48 +182,49 @@ col_formats = {
 }
 
 col_widths = {
-    'name':             150,        
-    'description':      300,            
-    'type':             100,        
-    'charges':          50,        
-    'mana':             50,        
-    'draw':             50,        
-    'cast_delay':       60,            
-    'recharge':         60,            
-    'spread':           60,        
-    'recoil':           50,        
-    'crit':             50,        
-    'damage':           50,        
-    'lifetime_mod':     50,                
-    'lifetime_min':     50,                
-    'lifetime_max':     50,                
-    'bounces':          50,        
-    'bounce_magnitude': 50,                    
-    'speed_min':        50,            
-    'speed_max':        50,            
-    'death_speed':      50,            
-    'trigger_time':     50,                
-    'dangerous':        50,            
-    'projectile':       50,            
-    'slice':            50,        
-    'fire':             50,        
-    'holy':             50,        
-    'electricity':      50,            
-    'drill':            50,        
-    'melee':            50,        
-    'healing':          50,        
-    'ice':              50,    
-    'explosion':        50,            
-    'radius':           45,        
-    't0':               45,    
-    't1':               45,    
-    't2':               45,    
-    't3':               45,    
-    't4':               45,    
-    't5':               45,    
-    't6':               45,    
-    't7':               45,    
-    't10':              45,      
+    'name':             150,
+    'description':      300,
+    'type':             100,
+    'charges':          50,
+    'mana':             50,
+    'draw':             50,
+    'cast_delay':       60,
+    'recharge':         60,
+    'spread':           60,
+    'recoil':           50,
+    'crit':             50,
+    'damage':           50,
+    'speed_mod':        50,
+    'lifetime_mod':     50,
+    'lifetime_min':     50,
+    'lifetime_max':     50,
+    'bounces':          50,
+    'bounce_magnitude': 50,
+    'speed_min':        50,
+    'speed_max':        50,
+    'death_speed':      50,
+    'trigger_time':     50,
+    'dangerous':        50,
+    'projectile':       50,
+    'slice':            50,
+    'fire':             50,
+    'holy':             50,
+    'electricity':      50,
+    'drill':            50,
+    'melee':            50,
+    'healing':          50,
+    'ice':              50,
+    'explosion':        50,
+    'radius':           45,
+    't0':               45,
+    't1':               45,
+    't2':               45,
+    't3':               45,
+    't4':               45,
+    't5':               45,
+    't6':               45,
+    't7':               45,
+    't10':              45,
 }
 
 border_format = {
@@ -286,6 +289,11 @@ conditionals = [
         get_range('damage'),
         ('MIN', None, red),
         ('NUMBER', '0', white),
+        ('MAX', None, green)),
+    make_gradient_rule(
+        get_range('speed_mod'),
+        ('MIN', None, red),
+        ('NUMBER', '1', white),
         ('MAX', None, green)),
     make_boolean_rule(
         get_range('dangerous'), 'NOT_BLANK', yellow),

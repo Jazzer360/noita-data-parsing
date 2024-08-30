@@ -155,6 +155,15 @@ def parse_lua_actions(actionblock, spell):
             else:
                 spell['lifetime_mod'] = f'{float(life):.0f}'
 
+        # Speed modifier
+        speed = re.search(r'(?<=c\.speed_multiplier)([*]{1}[\.0-9]+)', line)
+        if speed:
+            speed = speed.group(1)
+            if speed.startswith('='):
+                spell['speed_mod'] = f'\'{speed}'
+            elif speed.startswith('*'):
+                spell['speed_mod'] = f'{float(speed[1:]):.2f}'
+
 
 def parse_xml(filename, spell):
     if filename:
@@ -292,6 +301,7 @@ keys = ['id',
         'recoil',
         'crit',
         'damage',
+        'speed_mod',
         'lifetime_mod',
         'lifetime_min',
         'lifetime_max',
