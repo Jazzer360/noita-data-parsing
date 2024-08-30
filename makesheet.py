@@ -204,6 +204,7 @@ col_widths = {
     'speed_max':        50,
     'death_speed':      50,
     'trigger_time':     50,
+    'velocity_scaling': 50,
     'dangerous':        50,
     'projectile':       50,
     'slice':            50,
@@ -295,6 +296,8 @@ conditionals = [
         ('MIN', None, red),
         ('NUMBER', '1', white),
         ('MAX', None, green)),
+    make_boolean_rule(
+        get_range('velocity_scaling'), 'NOT_BLANK', lt_green),
     make_boolean_rule(
         get_range('dangerous'), 'NOT_BLANK', yellow),
     make_boolean_rule(

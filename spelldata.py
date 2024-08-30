@@ -174,45 +174,39 @@ def parse_xml(filename, spell):
             proj = soup.find('ProjectileComponent')
             expl = soup.find('config_explosion')
 
-            # Damage parsing
-            if (proj and proj.has_attr('damage')
-                    and float(proj.get('damage')) > 0):
-                spell['projectile'] = float(proj['damage'])*25
-            typedmg = soup.find('damage_by_type')
-            if typedmg:
-                for dtype, dmg in typedmg.attrs.items():
-                    if float(dmg) > 0:
-                        spell[dtype] = float(dmg)*25
-
-            # Explosion parsing
-            if (expl and expl.has_attr('damage')
-                    and float(expl.get('damage')) > 0):
-                spell['explosion'] = float(expl['damage'])*25
-            if (expl and expl.has_attr('explosion_radius')
-                    and float(expl.get('explosion_radius')) > 0):
-                spell['radius'] = int(expl['explosion_radius'])
-            if spell['name'] == 'Lightning bolt':
-                spell['explosion'] = 125.0
-
-            # Velocity parsing
-            if proj and proj.has_attr('speed_min'):
-                spell['speed_min'] = int(proj.get('speed_min'))
-            if proj and proj.has_attr('speed_max'):
-                spell['speed_max'] = int(proj.get('speed_max'))
-
-            # Lifetime parsing
+            if expl:
+                # Explosion parsing
+                if expl.has_attr('damage') and float(expl.get('damage')) > 0:
+                    spell['explosion'] = float(expl['damage'])*25
+                if (expl.has_attr('explosion_radius')
+                        and float(expl.get('explosion_radius')) > 0):
+                    spell['radius'] = int(expl['explosion_radius'])
+            
             if proj:
+                # Damage parsing
+                if proj.has_attr('damage') and float(proj.get('damage')) > 0:
+                    spell['projectile'] = float(proj['damage']) * 25
+
+                typedmg = soup.find('damage_by_type')
+                if typedmg:
+                    for dtype, dmg in typedmg.attrs.items():
+                        if float(dmg) > 0 or dtype == 'healing':
+                            spell[dtype] = float(dmg)*25
+
+                # Velocity parsing
+                if proj.has_attr('speed_min'):
+                    spell['speed_min'] = int(proj.get('speed_min'))
+                if proj.has_attr('speed_max'):
+                    spell['speed_max'] = int(proj.get('speed_max'))
+
+                # Lifetime parsing
                 life = proj.get('lifetime')
                 if life:
-                    try:
-                        variance = int(proj.get('lifetime_randomness'))
-                    except TypeError:
-                        variance = 0
+                    variance = int(proj.get('lifetime_randomnees') or 0)
                     spell['lifetime_min'] = int(life) - variance
                     spell['lifetime_max'] = int(life) + variance
 
-            # Friendly fire
-            if proj:
+                # Friendly fire
                 ff = False
                 if proj.get('friendly_fire') == '1':
                     if (proj.has_attr('damage')
@@ -226,22 +220,25 @@ def parse_xml(filename, spell):
                 if ff:
                     spell['dangerous'] = 'Yes'
 
-            # Death velocity
-            if proj:
+                # Death velocity
                 if proj.has_attr('die_on_low_velocity_limit'):
                     spell['death_speed'] = proj.get(
                         'die_on_low_velocity_limit')
 
-            # Bounces
-            if proj:
+                # Bounces
                 if proj.has_attr('bounces_left'):
                     bounces = proj.get('bounces_left')
                     if bounces != '0':
                         spell['bounces'] = proj.get('bounces_left')
                         spell['bounce_magnitude'] = proj.get('bounce_energy')
 
-            # Velocity scaling
+                # Velocity scaling
+                if proj.get('damage_scaled_by_speed') == '1':
+                    spell['velocity_scaling'] = 'Yes'
 
+            # Lightning bolt exception
+            if spell['name'] == 'Lightning bolt':
+                spell['explosion'] = 125.0
 
 
 def add_derived_stats(book):
@@ -311,6 +308,7 @@ keys = ['id',
         'speed_max',
         'death_speed',
         'trigger_time',
+        'velocity_scaling',
         'dangerous',
         'projectile',
         'slice',
